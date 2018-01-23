@@ -13,8 +13,10 @@
     <link rel="stylesheet" type="text/css" href="./lib/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="./lib/meetus/css/image_profile_style.css">
     <link rel="stylesheet" type="text/css" href="./lib/meetus/css/image_wall_style.css">
+    <link rel="stylesheet" type="text/css" href="./lib/meetus/css/image_member_say.css">
     <link rel="stylesheet" type="text/css" href="./lib/tech_stack/css/style.css">
     <link rel="stylesheet" type="text/css" href="./lib/sample_code/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./lib/contactus/css/style.css">
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -34,52 +36,46 @@
             <h2 class="subtitle">
               Great software made by great people
             </h2>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <router-link to="/home"  active-class='is-active' class="navbar-item">
+                <span>Home</span>
+              </router-link>
+              <router-link to="/projects"  active-class='is-active' class="navbar-item">
+                <span>Projects</span>
+              </router-link>
+              <router-link to="/techstack" active-class='is-active' class="navbar-item">
+                <span>Tech stack</span>
+              </router-link>
+              <router-link to="/samplecode" active-class='is-active' class="navbar-item">
+                <span>Sample code</span>
+              </router-link>
+              <router-link to="/services" active-class='is-active' class="navbar-item">
+                <span>Services</span>
+              </router-link>
+              <router-link to="/meetus" active-class='is-active' class="navbar-item">
+                <span>Meet our team</span>
+              </router-link>
+              <router-link to="/contactus" active-class='is-active' class="navbar-item">
+                <span>Contact us</span>
+              </router-link>
+            </div>
+           </div>
           </div>
         </div>
       </section>
-      <div class="tabs is-centered">
-        <ul>
-          <li>
-            <router-link to="/projects">
-              <span class="icon is-small"><i class="fa fa-th-list"></i></span>
-              <span>Projects</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/techstack">
-              <span class="icon is-small"><i class="fa fa-cubes"></i></span>
-              <span>Tech stack</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/samplecode">
-              <span class="icon is-small"><i class="fa fa-code"></i></span>
-              <span>Sample code</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/services">
-              <span class="icon is-small"><i class="fa fa-thumbs-up"></i></span>
-              <span>Services</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/meetus">
-              <span class="icon is-small"><i class="fa fa-users"></i></span>
-              <span>Meet our team</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/contactus">
-              <span class="icon is-small"><i class="fa fa-envelope-open"></i></span>
-              <span>Contact us</span>
-            </router-link>
-          </li>
-        </ul>
-      </div>
       <div class="container is-centered">
          <router-view></router-view>
       </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>
+              <strong>@MadeByUs</strong>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="bundle.js"></script>
   </body>

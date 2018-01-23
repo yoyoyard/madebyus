@@ -33,12 +33,70 @@ Vue.component('child', {
   `
 })
 
+Vue.component('LeadersSay', {
+  template:
+  `
+  <div id="say_container">
+    <input type="radio" name="nav" id="first" checked/>
+    <input type="radio" name="nav" id="second" />
+    <input type="radio" name="nav" id="third" />
+
+    <label for="first" class="first"></label>
+    <label for="second"  class="second"></label>
+    <label for="third" class="third"></label>
+
+    <div class="one slide">
+      <blockquote>
+        <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
+      </blockquote>
+      <img src="./images/member_270x210.jpg" width="170" height="130" class='say_img' />
+      <h2>Steve Kruger</h2>
+      <h6>UI/UX Designer at MadeByUs</h6>
+    </div>
+
+    <div class="two slide">
+      <blockquote>
+        <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I recommend him to anyone who wants their work done professionally. The project ... <a href="#"> read more</a><span class="rightq quotes">&bdquo; </span>
+      </blockquote>
+      <img src="./images/f4d6311b432c4804f1c8045459df9647.jpg" width="170" height="130" class='say_img'/>
+      <h2>John Doe</h2>
+      <h6>Developer Relations at MadeByUs</h6>
+    </div>
+
+    <div class="three slide">
+      <blockquote>
+        <span class="quotes leftq"> &ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
+      </blockquote>
+      <img src="./images/People_photography_composition_tips_PHG18.chap4_.n_p38_39.jpg" width="170" height="130" class='say_img' />
+      <h2>Steve Stevenson</h2>
+      <h6>CEO of MadeByUs</h6>
+    </div>
+  `
+})
+
+
+
 const Meetus = {
   template:
   `
    <div class="column">
      <div class="grid"></div>
-     <div class="team-members row">
+     <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Leaders Say
+          </h1>
+        </div>
+      </div>
+     <LeadersSay />
+     <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Meet our team
+          </h1>
+        </div>
+      </div>
+     <div class="team-members row is-centered">
        <child
           name="Berry Colour"
           title="Engineer" desc="Ruby / Python / C++ / Postgresql"

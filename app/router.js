@@ -4,9 +4,11 @@ const Samplecode = require('./samplecode.js')
 const Service = require('./service.js')
 const Meetus = require('./meetus.js')
 const Contactus = require('./contactus.js')
+const Home = require('./home.js')
 
 const router = new VueRouter({
   routes: [
+    { path: '/home', name: 'home', component: Home },
     { path: '/projects', name: 'projects', component: Project },
     { path: '/techstack', name: 'techstack', component: Techstack },
     { path: '/samplecode', name: 'samplecode', component: Samplecode },

@@ -16,6 +16,27 @@ Vue.component('Box', {
   `
 })
 
+Vue.component('Title', {
+  template:
+  `
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification ">
+            <p class="title">Technology stack</p>
+            <p class="subtitle">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <img src='./images/tech2.jpeg'>
+    </div>
+  </div>
+  `
+})
+
 Vue.component('Item', {
   props: ['tech_name', 'index'],
   template:
@@ -45,6 +66,14 @@ const Techstack = {
   template:
   `
   <div class="column">
+    <Title />
+    <div class="hero-body">
+       <div class="container has-text-centered">
+         <h1 class="title">
+          Our main technologies
+         </h1>
+       </div>
+     </div>
     <div class="columns">
       <Box tech_name="Ruby on rails" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/1.jpg'/>
       <Box tech_name="React Native" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/2.png'/>
@@ -55,7 +84,6 @@ const Techstack = {
       <Box tech_name="Javascript" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/5.png'/>
       <Box tech_name="PHP" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/6.jpg'/>
     </div>
-
  </div>
   `,
   mounted: function () {

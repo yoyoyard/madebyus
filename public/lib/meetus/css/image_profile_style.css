@@ -28,8 +28,8 @@ p {font-size: 14px; font-weight: 300; line-height: 22px; padding: 0 30px; margin
 
 /*= Media Query
 =============== */
-@media only screen and (max-width: 980px){
-	.row{width: 100%; margin: 110px 0;}
+@media only screen and (max-width: 2000px){
+	.row{width: 100%; margin: 110px 0; }
 	.team-members{text-align: center;}
 	.single-member{float: none; display: inline-block; vertical-align: bottom;}
 }
