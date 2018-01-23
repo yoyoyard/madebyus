@@ -1,0 +1,30 @@
+{
+  "name": "madebyus",
+  "version": "1.0.0",
+  "description": "Meet the team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack",
+    "server": "webpack-dev-server --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rogerluo410/madebyus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogerluo410/madebyus/issues"
+  },
+  "homepage": "https://github.com/rogerluo410/madebyus#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "bulma": "^0.6.2",
+    "bulma-start": "0.0.2"
+  }
+}
