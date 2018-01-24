@@ -16,22 +16,17 @@ Vue.component('Box', {
   `
 })
 
-Vue.component('Title', {
+Vue.component('TechTitle', {
   template:
   `
-  <div class="tile is-ancestor">
-    <div class="tile is-vertical is-8">
-      <div class="tile">
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification ">
-            <p class="title">Technology stack</p>
-            <p class="subtitle">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
-          </article>
-        </div>
-      </div>
+  <div class="columns">
+    <div class="column is-two-fifths">
+        <p class="title">Technology stack</p>
+        <p class="subtitle" style="margin-top: 5px;">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
+        <a href='#'><p>Read More</p></a>
     </div>
-    <div class="tile is-parent">
-      <img src='./images/tech2.jpeg'>
+    <div class="column">
+      <img src='./images/tech2.png'>
     </div>
   </div>
   `
@@ -65,8 +60,8 @@ Vue.component('Item', {
 const Techstack = {
   template:
   `
-  <div class="column">
-    <Title />
+  <div class="column" style="margin-top: 50px;">
+    <TechTitle />
     <div class="hero-body">
        <div class="container has-text-centered">
          <h1 class="title">
@@ -75,7 +70,10 @@ const Techstack = {
        </div>
      </div>
     <div class="columns">
-      <Box tech_name="Ruby on rails" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/1.jpg'/>
+      <Box
+      tech_name="Ruby on rails"
+      image_addr='./lib/tech_stack/images/1.jpg'
+      tech_desc="A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern." />
       <Box tech_name="React Native" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/2.png'/>
       <Box tech_name="Python" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/3.jpg'/>
     </div>

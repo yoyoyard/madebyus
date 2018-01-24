@@ -49,7 +49,7 @@ Vue.component('LeadersSay', {
       <blockquote>
         <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
       </blockquote>
-      <img src="./images/member_270x210.jpg" width="170" height="130" class='say_img' />
+      <img src="./images/leader1.jpg" width="170" height="130" class='say_img' />
       <h2>Steve Kruger</h2>
       <h6>UI/UX Designer at MadeByUs</h6>
     </div>
@@ -58,7 +58,7 @@ Vue.component('LeadersSay', {
       <blockquote>
         <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I recommend him to anyone who wants their work done professionally. The project ... <a href="#"> read more</a><span class="rightq quotes">&bdquo; </span>
       </blockquote>
-      <img src="./images/f4d6311b432c4804f1c8045459df9647.jpg" width="170" height="130" class='say_img'/>
+      <img src="./images/leader2.jpg" width="170" height="130" class='say_img'/>
       <h2>John Doe</h2>
       <h6>Developer Relations at MadeByUs</h6>
     </div>
@@ -67,7 +67,7 @@ Vue.component('LeadersSay', {
       <blockquote>
         <span class="quotes leftq"> &ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
       </blockquote>
-      <img src="./images/People_photography_composition_tips_PHG18.chap4_.n_p38_39.jpg" width="170" height="130" class='say_img' />
+      <img src="./images/leader3.jpeg" width="170" height="130" class='say_img' />
       <h2>Steve Stevenson</h2>
       <h6>CEO of MadeByUs</h6>
     </div>
@@ -80,7 +80,14 @@ const Meetus = {
   template:
   `
    <div class="column">
-     <div class="grid"></div>
+     <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Team wall
+          </h1>
+        </div>
+      </div>
+     <div class="grid" style="margin-top: 0px;" />
      <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
@@ -96,7 +103,7 @@ const Meetus = {
           </h1>
         </div>
       </div>
-     <div class="team-members row is-centered">
+     <div class="team-members row is-centered" style="margin-top: 0px;">
        <child
           name="Berry Colour"
           title="Engineer" desc="Ruby / Python / C++ / Postgresql"

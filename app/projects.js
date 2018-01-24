@@ -16,7 +16,7 @@ Vue.component('ReverseItem', {
 
     </div>
     <div class="tile is-vertical is-8">
-      <img :src=image_addr />
+      <img :src=image_addr class="shadow"/>
     </div>
   </div>
   `
@@ -29,7 +29,7 @@ Vue.component('ProjectItem', {
   `
   <div class="tile is-ancestor">
     <div class="tile is-vertical is-8">
-      <img :src=image_addr />
+      <img :src=image_addr class="shadow"/>
     </div>
     <div class="tile is-parent">
       <div class="tile">
@@ -51,7 +51,14 @@ Vue.component('ProjectItem', {
 const Projects = {
   template:
   `
-   <div class="column">
+  <div class="column">
+   <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          All we did
+        </h1>
+      </div>
+    </div>
     <section class="section">
       <div class="column is-gapless is-multiline is-mobile">
         <ProjectItem name="Flywheel" desc="fsfsfwerewrew  rewrewr ewrfewrfwefewwfwe" image_addr='./images/projects/p1.jpg' />

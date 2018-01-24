@@ -8,6 +8,7 @@ const Home = require('./home.js')
 
 const router = new VueRouter({
   routes: [
+    { path: '/', redirect: '/home' },
     { path: '/home', name: 'home', component: Home },
     { path: '/projects', name: 'projects', component: Project },
     { path: '/techstack', name: 'techstack', component: Techstack },
