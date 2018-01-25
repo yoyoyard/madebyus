@@ -7,12 +7,12 @@ Vue.component('Title', {
         <p class="subtitle" style="margin-top: 5px;">We understand the challenges faced when embracing new technology and tools. With this in mind, our expert team takes pride in ensuring you’re set up for success.</p>
         <div class="columns">
          <div class="column">
-           <a href='/#/contactus' style="margin-left: 30px;" class="button is-primary is-outlined">Let's build together</a>
+           <a href='/#/contactus' style="margin-left: 30px;" class="button is-dark is-outlined">Let's build together</a>
          </div>
         </div>
     </div>
     <div class="column">
-      <img src='./images/home/p6.png'>
+      <img src='./images/home/home-image.png'>
     </div>
   </div>
   `
@@ -33,9 +33,8 @@ Vue.component('TechItem', {
           </article>
         </div>
       </div>
-
     </div>
-    <div class="tile is-vertical is-5">
+    <div class="tile is-vertical is-5" style="padding-right: 30px;">
       <img :src=image_addr />
     </div>
   </div>
@@ -45,26 +44,31 @@ Vue.component('TechItem', {
 const Home = {
   template:
   `
-    <div class='column'>
-      <Title />
-      <div class="hero-body">
-       <div class="container has-text-centered">
-         <h1 class="title">
-           About us
-         </h1>
-       </div>
+    <div class="container is-fullhd">
+      <div class="section">
+        <Title />
       </div>
-      <div class="container">
-        <div class="columns">
-         <div class="column">
-           <strong>MadeByUs</strong> helps companies design, engineer, and iterate on their most important digital products. Our team is smart, relatable, and deeply knowledgeable about modern application architecture and UX. We work alongside teams building beautiful, functional web applications with an eye toward the future.
+      <div class="white-bg">
+        <div class="hero-body">
+         <div class="container has-text-centered">
+           <h1 class="title">
+             About us
+           </h1>
          </div>
-         <div class="column">
-          <img src="./images/home/p2.jpg" class="shadow"/>
-         </div>
+        </div>
+        <div class="container">
+          <div class="columns">
+           <div class="column">
+             <strong>MadeByUs</strong> helps companies design, engineer, and iterate on their most important digital products. Our team is smart, relatable, and deeply knowledgeable about modern application architecture and UX. We work alongside teams building beautiful, functional web applications with an eye toward the future.
+           </div>
+           <div class="column">
+            <img src="./images/home/teamwork.jpg" class="shadow"/>
+           </div>
+          </div>
         </div>
       </div>
 
+     <div>
       <div class="hero-body">
          <div class="container has-text-centered">
            <h1 class="title">
@@ -72,8 +76,14 @@ const Home = {
            </h1>
          </div>
        </div>
-     <img src="./images/home/aminass-web-design-process.png" />
+      <div style="margin-left: 20px; margin-right: 20px;">
+       <img src="./images/home/web-design-process.png" />
+       <br /><h1 class="title has-text-centered">Sprint</h1><br />
+       <img src="./images/home/work-sprint.png" />
+      </div>
+    </div>
 
+    <div class="white-bg" style="padding-bottom: 20px;">
      <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
@@ -82,7 +92,7 @@ const Home = {
         </div>
       </div>
       <TechItem
-       name="The best experiences on Website development"
+       name="Website development"
        desc="Reducing costs. Expediting development. We empower companies with website solutions."
        image_addr="./images/home/website-dev.png" />
       <TechItem
@@ -92,11 +102,12 @@ const Home = {
       <TechItem
         name="Mobile development"
         desc="Both Android and iOS platform."
-        image_addr="./images/home/mobile.png" />
+        image_addr="./images/home/mobile-dev.png" />
       <TechItem
         name="Report analysis"
         desc="Generate and export schematize report."
         image_addr="./images/home/report-analysis.png" />
+     </div>
     </div>
   `
 }

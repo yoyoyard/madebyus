@@ -3,6 +3,9 @@ Vue.component('ReverseItem', {
   template:
   `
   <div class="tile is-ancestor">
+    <div class="tile is-vertical is-6">
+      <img :src=image_addr class="shadow"/>
+    </div>
     <div class="tile is-parent">
       <div class="tile">
         <div class="tile is-parent is-vertical">
@@ -13,10 +16,6 @@ Vue.component('ReverseItem', {
           </article>
         </div>
       </div>
-
-    </div>
-    <div class="tile is-vertical is-8">
-      <img :src=image_addr class="shadow"/>
     </div>
   </div>
   `
@@ -28,9 +27,6 @@ Vue.component('ProjectItem', {
   template:
   `
   <div class="tile is-ancestor">
-    <div class="tile is-vertical is-8">
-      <img :src=image_addr class="shadow"/>
-    </div>
     <div class="tile is-parent">
       <div class="tile">
         <div class="tile is-parent is-vertical">
@@ -41,9 +37,10 @@ Vue.component('ProjectItem', {
           </article>
         </div>
       </div>
-
     </div>
-
+    <div class="tile is-vertical is-6">
+      <img :src=image_addr class="shadow"/>
+    </div>
   </div>
   `
 })
@@ -51,7 +48,7 @@ Vue.component('ProjectItem', {
 const Projects = {
   template:
   `
-  <div class="column">
+  <div class="container is-fullhd">
    <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="title">
@@ -59,19 +56,26 @@ const Projects = {
         </h1>
       </div>
     </div>
-    <section class="section">
+    <section class="section white-bg">
       <div class="column is-gapless is-multiline is-mobile">
-        <ProjectItem name="Flywheel" desc="fsfsfwerewrew  rewrewr ewrfewrfwefewwfwe" image_addr='./images/projects/p1.jpg' />
+        <ProjectItem name="Flywheel"
+         desc="Helping instructors inspire riders through experience and service design."
+         image_addr='./images/projects/p1.jpg' />
       </div>
     </section>
     <section class="section">
       <div class="column is-gapless is-multiline is-mobile">
-        <ReverseItem name="Flywheel" desc="fsfsfwerewrew  rewrewr ewrfewrfwefewwfwe" image_addr='./images/projects/p2.jpg' />
+        <ReverseItem name="McGraw-Hill Education"
+        desc="The best educational experiences are adaptive."
+        image_addr='./images/projects/p2.jpg' />
       </div>
     </section>
-    <section class="section">
+    <section class="section white-bg">
       <div class="column is-gapless is-multiline is-mobile">
-        <ProjectItem name="Flywheel" desc="fsfsfwerewrew  rewrewr ewrfewrfwefewwfwe" image_addr='./images/projects/p3.jpg' />
+        <ProjectItem
+        name="Learnivore"
+        desc="A social platform supporting collaborative learning by connecting instructors and students."
+        image_addr='./images/projects/p3.jpg' />
       </div>
     </section>
   </div>
@@ -79,6 +83,5 @@ const Projects = {
   `,
   mounted: function () {
   }
-
 }
 module.exports = Projects

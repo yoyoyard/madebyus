@@ -33,7 +33,7 @@ Vue.component('child', {
   `
 })
 
-Vue.component('LeadersSay', {
+const PeopleSayTemplate = {
   template:
   `
   <div id="say_container">
@@ -49,7 +49,7 @@ Vue.component('LeadersSay', {
       <blockquote>
         <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
       </blockquote>
-      <img src="./images/leader1.jpg" width="170" height="130" class='say_img' />
+      <img src="./images/team/leader1.jpg" width="170" height="130" class='say_img' />
       <h2>Steve Kruger</h2>
       <h6>UI/UX Designer at MadeByUs</h6>
     </div>
@@ -58,7 +58,7 @@ Vue.component('LeadersSay', {
       <blockquote>
         <span class="leftq quotes">&ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I recommend him to anyone who wants their work done professionally. The project ... <a href="#"> read more</a><span class="rightq quotes">&bdquo; </span>
       </blockquote>
-      <img src="./images/leader2.jpg" width="170" height="130" class='say_img'/>
+      <img src="./images/team/leader2.jpg" width="170" height="130" class='say_img'/>
       <h2>John Doe</h2>
       <h6>Developer Relations at MadeByUs</h6>
     </div>
@@ -67,19 +67,20 @@ Vue.component('LeadersSay', {
       <blockquote>
         <span class="quotes leftq"> &ldquo;</span> He promptly completed the task at hand and communicates really well till the project reaches the finishing line. I was pleased with his creative design and will definitely be hiring him again. <span class="rightq quotes">&bdquo; </span>
       </blockquote>
-      <img src="./images/leader3.jpeg" width="170" height="130" class='say_img' />
+      <img src="./images/team/leader3.jpeg" width="170" height="130" class='say_img' />
       <h2>Steve Stevenson</h2>
       <h6>CEO of MadeByUs</h6>
     </div>
+   </div>
   `
-})
+}
 
-
+Vue.component('PeopleSay', PeopleSayTemplate)
 
 const Meetus = {
   template:
   `
-   <div class="column">
+   <div class="container is-fullhd">
      <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
@@ -88,53 +89,59 @@ const Meetus = {
         </div>
       </div>
      <div class="grid" style="margin-top: 0px;" />
-     <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            Leaders Say
-          </h1>
+     <div class="white-bg">
+      <div class="columns">
+       <div class="column is-half">
+         <PeopleSay />
+        </div>
+        <div class="column">
+           <img src="./images/team/goal.jpg" class="shadow" style="margin-right: 50px;"/>
         </div>
       </div>
-     <LeadersSay />
-     <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            Meet our team
-          </h1>
-        </div>
-      </div>
-     <div class="team-members row is-centered" style="margin-top: 0px;">
-       <child
-          name="Berry Colour"
-          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-          image_profile="./images/member_270x210.jpg" >
-       </child>
-       <child
-          name="Richard Gan"
-          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-          image_profile="./images/member_270x210.jpg" >
-       </child>
-       <child
-          name="Roger Luo"
-          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-          image_profile="./images/member_270x210.jpg" >
-       </child>
-       <child
-          name="Chris Wang"
-          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-          image_profile="./images/member_270x210.jpg" >
-       </child>
-       <child
-          name="Gary Gao"
-          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-          image_profile="./images/member_270x210.jpg" >
-       </child>
-       <child
-          name="Berry Tan"
-          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-          image_profile="./images/member_270x210.jpg" >
-       </child>
      </div>
+
+     <div>
+       <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title">
+              Meet our team
+            </h1>
+          </div>
+        </div>
+       <div class="team-members row is-centered" style="margin-top: 0px;">
+         <child
+            name="Berry Colour"
+            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+            image_profile="./images/team/member_270x210.jpg" >
+         </child>
+         <child
+            name="Richard Gan"
+            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+            image_profile="./images/team/member_270x210.jpg" >
+         </child>
+         <child
+            name="Roger Luo"
+            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+            image_profile="./images/team/member_270x210.jpg" >
+         </child>
+         <child
+            name="Chris Wang"
+            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+            image_profile="./images/team/member_270x210.jpg" >
+         </child>
+         <child
+            name="Gary Gao"
+            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+            image_profile="./images/team/member_270x210.jpg" >
+         </child>
+         <child
+            name="Berry Tan"
+            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+            image_profile="./images/team/member_270x210.jpg" >
+         </child>
+       </div>
+      </div>
+
     </div>
   `,
   mounted: function () {

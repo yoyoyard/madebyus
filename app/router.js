@@ -22,4 +22,13 @@ const router = new VueRouter({
 new Vue({
 	router,
   el: '#root',
+  mounted: function () {
+    $('.modal-button').click(function(e) {
+        $('.modal').addClass('is-active')
+    });
+
+    $('.modal-close').click(function(e) {
+        $('.modal').removeClass('is-active')
+    });
+  }
 })

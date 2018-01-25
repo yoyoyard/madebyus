@@ -19,14 +19,14 @@ Vue.component('Box', {
 Vue.component('TechTitle', {
   template:
   `
-  <div class="columns">
+  <div class="columns" style="padding-left: 40px;">
     <div class="column is-two-fifths">
         <p class="title">Technology stack</p>
         <p class="subtitle" style="margin-top: 5px;">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
         <a href='#'><p>Read More</p></a>
     </div>
     <div class="column">
-      <img src='./images/tech2.png'>
+      <img src='./images/tech/tech-stack.png'>
     </div>
   </div>
   `
@@ -60,27 +60,39 @@ Vue.component('Item', {
 const Techstack = {
   template:
   `
-  <div class="column" style="margin-top: 50px;">
+  <div class="container is-fullhd" style="margin-top: 50px;">
     <TechTitle />
-    <div class="hero-body">
-       <div class="container has-text-centered">
-         <h1 class="title">
-          Our main technologies
-         </h1>
+    <div class="white-bg" style="padding-bottom: 30px;">
+      <div class="hero-body">
+         <div class="container has-text-centered">
+           <h1 class="title">
+            Our main technologies
+           </h1>
+         </div>
        </div>
-     </div>
-    <div class="columns">
-      <Box
-      tech_name="Ruby on rails"
-      image_addr='./lib/tech_stack/images/1.jpg'
-      tech_desc="A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern." />
-      <Box tech_name="React Native" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/2.png'/>
-      <Box tech_name="Python" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/3.jpg'/>
-    </div>
-    <div class="columns">
-      <Box tech_name="HTML + CSS" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/4.jpg'/>
-      <Box tech_name="Javascript" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/5.png'/>
-      <Box tech_name="PHP" tech_desc="ffdsfdsfdsfsd" image_addr='./lib/tech_stack/images/6.jpg'/>
+      <div class="columns">
+        <Box
+        tech_name="Ruby on rails"
+        image_addr='./images/tech/ruby.jpg'
+        tech_desc="A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern." />
+        <Box tech_name="React Native"
+        tech_desc="ffdsfdsfdsfsd"
+        image_addr='./images/tech/react-native.png'/>
+        <Box tech_name="Python"
+        tech_desc="ffdsfdsfdsfsd"
+        image_addr='./images/tech/python.jpg'/>
+      </div>
+      <div class="columns">
+        <Box tech_name="HTML + CSS"
+        tech_desc="ffdsfdsfdsfsd"
+        image_addr='./images/tech/html-css.jpg'/>
+        <Box tech_name="Javascript"
+        tech_desc="ffdsfdsfdsfsd"
+        image_addr='./images/tech/javascript.png'/>
+        <Box tech_name="PHP"
+        tech_desc="ffdsfdsfdsfsd"
+        image_addr='./images/tech/php.jpg'/>
+      </div>
     </div>
  </div>
   `,
