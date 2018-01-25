@@ -1,7 +1,7 @@
 # madebyus
 
-# Build 
-  `npm start`
+# Build
+  `npm install & npm start`
 
 # Run
   `npm run server`
