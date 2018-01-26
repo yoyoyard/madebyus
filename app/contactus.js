@@ -1,6 +1,6 @@
-const ContactForm = require('./contactform.js')
+const contactForm = require('./contactform.js')
 
-Vue.component('ContactInfo', {
+Vue.component('contact-info', {
   template:
   `
   <div class="columns is-gapless">
@@ -29,7 +29,7 @@ Vue.component('ContactInfo', {
   `
 })
 
-Vue.component('ContactButtons', {
+Vue.component('contact-buttons', {
   template:
   `
   <div class="columns is-gapless">
@@ -61,7 +61,7 @@ Vue.component('ContactButtons', {
   `
 })
 
-Vue.component('ContactTitle', {
+Vue.component('contact-title', {
   template:
   `
   <div class="column is-three-fifths">
@@ -71,20 +71,20 @@ Vue.component('ContactTitle', {
   `
 })
 
-const Contactus = {
+const contactUs = {
   template:
   `
   <div class='column'>
     <div class="columns">
-      <ContactTitle />
+      <contact-title />
       <div class="column">
-        <ContactInfo />
+        <contact-info />
         <p><strong>Follow us:</strong></p>
-        <ContactButtons />
+        <contact-buttons />
       </div>
     </div>
-    <ContactForm />
+    <contact-form />
    </div>
   `
 }
-module.exports = Contactus
+module.exports = contactUs

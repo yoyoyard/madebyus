@@ -1,4 +1,4 @@
-Vue.component('Box', {
+Vue.component('tech-item-box', {
   props: ['tech_name', 'tech_desc', 'image_addr'],
   template:
   `
@@ -16,7 +16,7 @@ Vue.component('Box', {
   `
 })
 
-Vue.component('TechTitle', {
+Vue.component('tech-title', {
   template:
   `
   <div class="columns" style="padding-left: 40px;">
@@ -32,7 +32,7 @@ Vue.component('TechTitle', {
   `
 })
 
-Vue.component('Item', {
+Vue.component('map-item', {
   props: ['tech_name', 'index'],
   template:
   `
@@ -57,11 +57,11 @@ Vue.component('Item', {
 //   <button>Technology map</button>
 // </div>
 
-const Techstack = {
+const techStack = {
   template:
   `
   <div class="container is-fullhd" style="margin-top: 50px;">
-    <TechTitle />
+    <tech-title />
     <div class="white-bg" style="padding-bottom: 30px;">
       <div class="hero-body">
          <div class="container has-text-centered">
@@ -71,27 +71,31 @@ const Techstack = {
          </div>
        </div>
       <div class="columns">
-        <Box
-        tech_name="Ruby on rails"
-        image_addr='./images/tech/ruby.jpg'
-        tech_desc="A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern." />
-        <Box tech_name="React Native"
-        tech_desc="ffdsfdsfdsfsd"
-        image_addr='./images/tech/react-native.png'/>
-        <Box tech_name="Python"
-        tech_desc="ffdsfdsfdsfsd"
-        image_addr='./images/tech/python.jpg'/>
+        <tech-item-box
+          tech_name="Ruby on rails"
+          image_addr='./images/tech/ruby.jpg'
+          tech_desc="A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern." />
+          <Box tech_name="React Native"
+          tech_desc="ffdsfdsfdsfsd"
+          image_addr='./images/tech/react-native.png'/>
+        <tech-item-box
+          tech_name="Python"
+          tech_desc="ffdsfdsfdsfsd"
+          image_addr='./images/tech/python.jpg'/>
       </div>
       <div class="columns">
-        <Box tech_name="HTML + CSS"
-        tech_desc="ffdsfdsfdsfsd"
-        image_addr='./images/tech/html-css.jpg'/>
-        <Box tech_name="Javascript"
-        tech_desc="ffdsfdsfdsfsd"
-        image_addr='./images/tech/javascript.png'/>
-        <Box tech_name="PHP"
-        tech_desc="ffdsfdsfdsfsd"
-        image_addr='./images/tech/php.jpg'/>
+        <tech-item-box
+          tech_name="HTML + CSS"
+          tech_desc="ffdsfdsfdsfsd"
+          image_addr='./images/tech/html-css.jpg'/>
+        <tech-item-box
+          tech_name="Javascript"
+          tech_desc="ffdsfdsfdsfsd"
+          image_addr='./images/tech/javascript.png'/>
+        <tech-item-box
+          tech_name="PHP"
+          tech_desc="ffdsfdsfdsfsd"
+          image_addr='./images/tech/php.jpg'/>
       </div>
     </div>
  </div>
@@ -129,4 +133,4 @@ const Techstack = {
     setTimeout(function() { toggleOptions('.selector'); }, 100);
   }
 }
-module.exports = Techstack
+module.exports = techStack

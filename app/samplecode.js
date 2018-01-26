@@ -1,4 +1,4 @@
-Vue.component('Code', {
+Vue.component('sample-code-item', {
   props: ['code_snippet', 'code_title', 'code_description'],
   template:
   `
@@ -11,22 +11,22 @@ Vue.component('Code', {
 })
 
 
-const Samplecode = {
+const sampleCode = {
   template: `
     <div class="column">
      <div class="columns">
-      <Code code_snippet='p1 = 1\np2 = 2' />
-      <Code code_snippet='p3 = 3\np4 = 4' />
+      <sample-code-item code_snippet='p1 = 1\np2 = 2' />
+      <sample-code-item code_snippet='p3 = 3\np4 = 4' />
      </div>
      <div class="columns">
-      <Code code_snippet='p3 = 3\np4 = 4' />
-      <Code code_snippet='p5 = 5\np6 = 6' />
+      <sample-code-item code_snippet='p3 = 3\np4 = 4' />
+      <sample-code-item code_snippet='p5 = 5\np6 = 6' />
      </div>
      <div class="columns">
-      <Code code_snippet='p1 = 1\np2 = 2' />
-      <Code code_snippet='p5 = 5\np6 = 6' />
+      <sample-code-item code_snippet='p1 = 1\np2 = 2' />
+      <sample-code-item code_snippet='p5 = 5\np6 = 6' />
      </div>
     </div>
     `
 }
-module.exports = Samplecode
+module.exports = sampleCode

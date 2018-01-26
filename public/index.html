@@ -16,16 +16,17 @@
   </head>
   <body>
     <div id="root">
-      <section class="hero is-dark">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
+      <section id="navbar" class="hero is-dark">
+        <div class="container ">
+          <div class="brand-pos">
+            <h1 id="brand-title" class="title">
               MadeByUs
             </h1>
-            <h2 class="subtitle">
+            <h2 id="brand-subtitle" class="subtitle">
               Great software made by great people
             </h2>
-            <div id="navbarMenuHeroA" class="navbar-menu">
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
               <router-link to="/home"  active-class='is-active' class="navbar-item">
                 <span>Home</span>
@@ -46,54 +47,65 @@
                 <span>Contact us</span>
               </router-link>
             </div>
-           </div>
-          </div>
+         </div>
         </div>
       </section>
       <div class="container is-fullhd">
          <router-view></router-view>
       </div>
-      <div style="position:fixed; bottom:10px; right:10px;">
-       <a class="button is-dark is-large modal-button" data-target="modal">Contact us</a>
-      </div>
-      <div class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-          <div id="form_container" class="shadow">
-            <form id="contact" action="" method="post">
-              <h3>Quick Contact</h3>
-              <h4>Contact us today, and get reply with in 24 hours!</h4>
-              <fieldset>
-                <input placeholder="Your name" type="text" tabindex="1" autofocus>
-              </fieldset>
-              <fieldset>
-                <input placeholder="Your Email Address" type="email" tabindex="2">
-              </fieldset>
-              <fieldset>
-                <input placeholder="Your Phone Number" type="tel" tabindex="3">
-              </fieldset>
-              <fieldset>
-                <textarea placeholder="Type your Message Here...." tabindex="5"></textarea>
-              </fieldset>
-              <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-              </fieldset>
-            </form>
-          </div>
+      <div>
+        <div style="position:fixed; bottom:10px; right:10px;">
+         <a id="contact-button" class="button is-dark is-large modal-button" style="display: none;" data-target="modal">
+           <span id="contact-text">Contact us</span>
+           <span id="contact-icon" class="icon is-large has-text-dark" style="display: none;">
+            <i class="fa fa-plus-circle fa-3x"></i>
+          </span>
+         </a>
         </div>
-        <button class="modal-close is-large" aria-label="close"></button>
-      </div>
-
-      <footer class="footer">
-        <div class="container">
-          <div class="content has-text-centered">
-            <p>
-              <strong>@MadeByUs</strong>
-            </p>
+        <div class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <contact-form />
           </div>
+          <button class="modal-close is-large" aria-label="close"></button>
         </div>
-      </footer>
+      </div>
+      <div id="humburger" style="display: none;">
+        <div class="menu">
+    			<div class="menu-bg js-blur"></div>
+    			<nav class="menu-items">
+            <router-link to="/home"  active-class='is-active' class="menu-item">
+              <span class="js-blur">Home</span>
+            </router-link>
+            <router-link to="/projects"  active-class='is-active' class="menu-item">
+              <span class="js-blur">Projects</span>
+            </router-link>
+            <router-link to="/techstack" active-class='is-active' class="menu-item">
+              <span class="js-blur">Tech stack</span>
+            </router-link>
+            <router-link to="/services" active-class='is-active' class="menu-item">
+              <span class="js-blur">Services</span>
+            </router-link>
+            <router-link to="/meetus" active-class='is-active' class="menu-item">
+              <span class="js-blur">Meet our team</span>
+            </router-link>
+            <router-link to="/contactus" active-class='is-active' class="menu-item">
+              <span class="js-blur">Contact us</span>
+            </router-link>
+    			</nav>
+    		</div>
+    		<button class="menu-toggle"><span>Open Menu</span></button>
+      </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            <strong>@MadeByUs</strong>
+          </p>
+        </div>
+      </div>
+    </footer>
     <script src="bundle.js"></script>
   </body>
 </html>

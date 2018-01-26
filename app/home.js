@@ -1,4 +1,4 @@
-Vue.component('Title', {
+Vue.component('company-title', {
   template:
   `
   <div class="columns">
@@ -18,7 +18,7 @@ Vue.component('Title', {
   `
 })
 
-Vue.component('TechItem', {
+Vue.component('service-item', {
   props: ['name', 'desc', 'image_addr'],
   template:
   `
@@ -41,12 +41,12 @@ Vue.component('TechItem', {
   `
 })
 
-const Home = {
+const home = {
   template:
   `
     <div class="container is-fullhd">
       <div class="section">
-        <Title />
+        <company-title />
       </div>
       <div class="white-bg">
         <div class="hero-body">
@@ -91,19 +91,19 @@ const Home = {
           </h1>
         </div>
       </div>
-      <TechItem
+      <service-item
        name="Website development"
        desc="Reducing costs. Expediting development. We empower companies with website solutions."
        image_addr="./images/home/website-dev.png" />
-      <TechItem
+      <service-item
         name="Website maintanance"
         desc="Optimize performance, fix security problems."
         image_addr="./images/home/web-maintenance.png" />
-      <TechItem
+      <service-item
         name="Mobile development"
         desc="Both Android and iOS platform."
         image_addr="./images/home/mobile-dev.png" />
-      <TechItem
+      <service-item
         name="Report analysis"
         desc="Generate and export schematize report."
         image_addr="./images/home/report-analysis.png" />
@@ -111,4 +111,4 @@ const Home = {
     </div>
   `
 }
-module.exports = Home
+module.exports = home

@@ -1,4 +1,4 @@
-const ContactForm = Vue.component('ContactForm', {
+const contactForm = Vue.component('contact-form', {
   template:
   `
   <div id="form_container" class="shadow">
@@ -25,4 +25,4 @@ const ContactForm = Vue.component('ContactForm', {
   `
 })
 
-module.exports = ContactForm
+module.exports = contactForm

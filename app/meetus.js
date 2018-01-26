@@ -1,16 +1,3 @@
-// const member = new Vue({
-//   el: '#hexGrid',
-//   data: {
-//     items: [
-//       { image: './lib/image_gallery/img/1.jpg', name: 'Roger Luo', description: 'C++/Python/Ruby' },
-//       { image: './lib/image_gallery/img/1.jpg', name: 'Berry Colorful', description: 'C++/Python/Ruby' },
-//       { image: './lib/image_gallery/img/1.jpg', name: 'Berry Colorful', description: 'C++/Python/Ruby' },
-//     ]
-//   }
-// })
-//
-
-
 Vue.component('child', {
   props: ['name', 'title', 'desc', 'image_profile'],
   template:
@@ -33,7 +20,7 @@ Vue.component('child', {
   `
 })
 
-const PeopleSayTemplate = {
+const sayigngTemplate = {
   template:
   `
   <div id="say_container">
@@ -75,9 +62,9 @@ const PeopleSayTemplate = {
   `
 }
 
-Vue.component('PeopleSay', PeopleSayTemplate)
+Vue.component('saying', sayigngTemplate)
 
-const Meetus = {
+const meetUs = {
   template:
   `
    <div class="container is-fullhd">
@@ -88,19 +75,20 @@ const Meetus = {
           </h1>
         </div>
       </div>
-     <div class="grid" style="margin-top: 0px;" />
-     <div class="white-bg">
-      <div class="columns">
-       <div class="column is-half">
-         <PeopleSay />
-        </div>
-        <div class="column">
-           <img src="./images/team/goal.jpg" class="shadow" style="margin-right: 50px;"/>
+
+      <div class="grid" style="margin-top: 0px;" />
+       <div class="white-bg">
+        <div class="columns">
+         <div class="column is-half">
+           <saying />
+          </div>
+          <div class="column">
+             <img src="./images/team/goal.jpg" class="shadow" style="margin-right: 50px;"/>
+          </div>
         </div>
       </div>
-     </div>
 
-     <div>
+      <div>
        <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title">
@@ -141,7 +129,6 @@ const Meetus = {
          </child>
        </div>
       </div>
-
     </div>
   `,
   mounted: function () {
@@ -198,4 +185,4 @@ const Meetus = {
     }
   }
 }
-module.exports = Meetus
+module.exports = meetUs
