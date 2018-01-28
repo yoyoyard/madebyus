@@ -130,7 +130,7 @@ new Vue({
     var scrollOffset = function(e){
       var e =e || window.event;
       var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
-      if (scrolltop > 70) {
+      if (scrolltop > 300) {
         $("#navbar").addClass('navbar-fixed-top');
         $("body").css("padding-top","120px");
       } else {
