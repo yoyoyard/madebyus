@@ -75,7 +75,7 @@ const techStack = {
           tech_name="Ruby on rails"
           image_addr='./images/tech/ruby.jpg'
           tech_desc="A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern." />
-          <Box tech_name="React Native"
+        <tech-item-box tech_name="React Native"
           tech_desc="ffdsfdsfdsfsd"
           image_addr='./images/tech/react-native.png'/>
         <tech-item-box

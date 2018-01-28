@@ -69,69 +69,96 @@ const meetUs = {
   `
    <div class="container is-fullhd">
      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title">
-            Team wall
-          </h1>
-        </div>
+      <div class="container has-text-centered">
+        <h1 class="title">
+          Team wall
+        </h1>
       </div>
+     </div>
+     <div class="grid" style="margin-top: 0px;" />
 
-      <div class="grid" style="margin-top: 0px;" />
-       <div class="white-bg">
-        <div class="columns">
-         <div class="column is-half">
-           <saying />
-          </div>
-          <div class="column">
-             <img src="./images/team/goal.jpg" class="shadow" style="margin-right: 50px;"/>
-          </div>
-        </div>
-      </div>
-
-      <div>
-       <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="title">
-              Meet our team
-            </h1>
-          </div>
-        </div>
-       <div class="team-members row is-centered" style="margin-top: 0px;">
-         <child
-            name="Berry Colour"
-            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-            image_profile="./images/team/member_270x210.jpg" >
-         </child>
-         <child
-            name="Richard Gan"
-            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-            image_profile="./images/team/member_270x210.jpg" >
-         </child>
-         <child
-            name="Roger Luo"
-            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-            image_profile="./images/team/member_270x210.jpg" >
-         </child>
-         <child
-            name="Chris Wang"
-            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-            image_profile="./images/team/member_270x210.jpg" >
-         </child>
-         <child
-            name="Gary Gao"
-            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-            image_profile="./images/team/member_270x210.jpg" >
-         </child>
-         <child
-            name="Berry Tan"
-            title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-            image_profile="./images/team/member_270x210.jpg" >
-         </child>
+     <div class="white-bg">
+      <div class="columns">
+       <div class="column is-half" style="padding-bottom: 50px; padding-left: 40px;">
+         <div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+          <div class="slides"></div>
+          <h3 class="title"></h3>
+          <a class="prev">‹</a>
+          <a class="next">›</a>
+          <a class="play-pause"></a>
+         </div>
+       </div>
+       <div class="column is-half" style="padding-top: 30px; ">
+         <saying />
        </div>
       </div>
     </div>
+
+    <div>
+     <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Meet our team
+          </h1>
+        </div>
+      </div>
+     <div class="team-members row is-centered" style="margin-top: 0px;">
+       <child
+          name="Berry Colour"
+          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+          image_profile="./images/team/member_270x210.jpg" >
+       </child>
+       <child
+          name="Richard Gan"
+          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+          image_profile="./images/team/member_270x210.jpg" >
+       </child>
+       <child
+          name="Roger Luo"
+          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+          image_profile="./images/team/member_270x210.jpg" >
+       </child>
+       <child
+          name="Chris Wang"
+          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+          image_profile="./images/team/member_270x210.jpg" >
+       </child>
+       <child
+          name="Gary Gao"
+          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+          image_profile="./images/team/member_270x210.jpg" >
+       </child>
+       <child
+          name="Berry Tan"
+          title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+          image_profile="./images/team/member_270x210.jpg" >
+       </child>
+     </div>
+    </div>
+  </div>
   `,
   mounted: function () {
+    blueimp.Gallery(
+      [
+          {
+              title: 'Banana',
+              href: 'https://farm5.static.flickr.com/4706/39922223581_66942ee7db_c.jpg',
+              type: 'image/jpeg',
+
+          },
+          {
+              title: 'Apple',
+              href: 'https://farm5.static.flickr.com/4706/39922223581_66942ee7db_c.jpg',
+              type: 'image/jpeg',
+
+          }
+      ],
+      {
+          container: '#blueimp-gallery-carousel',
+          carousel: true
+      }
+    );
+
     //Creating 50 thumbnails inside .grid
     //the images are stored on the server serially. So we can use a loop to generate the HTML.
     var images = "", count = 50;

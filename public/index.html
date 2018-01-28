@@ -10,44 +10,52 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <link rel="stylesheet" type="text/css" href="./vendors/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./vendors/css/blueimp-gallery.min.css">
     <script type="text/javascript" src='./vendors/js/jquery.min.js'></script>
     <script type="text/javascript" src="./vendors/js/TweenMax.min.js"></script>
     <script type="text/javascript" src='./vendors/js/jquery.easing.min.js'></script>
+    <script type="text/javascript" src='./vendors/js/blueimp-gallery.js'></script>
   </head>
   <body>
     <div id="root">
       <section id="navbar" class="hero is-dark">
         <div class="container ">
-          <div class="brand-pos">
-            <h1 id="brand-title" class="title">
-              MadeByUs
-            </h1>
-            <h2 id="brand-subtitle" class="subtitle">
-              Great software made by great people
-            </h2>
-          </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
-              <router-link to="/home"  active-class='is-active' class="navbar-item">
-                <span>Home</span>
-              </router-link>
-              <router-link to="/projects"  active-class='is-active' class="navbar-item">
-                <span>Projects</span>
-              </router-link>
-              <router-link to="/techstack" active-class='is-active' class="navbar-item">
-                <span>Tech stack</span>
-              </router-link>
-              <router-link to="/services" active-class='is-active' class="navbar-item">
-                <span>Services</span>
-              </router-link>
-              <router-link to="/meetus" active-class='is-active' class="navbar-item">
-                <span>Meet our team</span>
-              </router-link>
-              <router-link to="/contactus" active-class='is-active' class="navbar-item">
-                <span>Contact us</span>
-              </router-link>
+          <div class="columns">
+            <div class="column is-two-fifths">
+              <div class="brand-pos">
+                <h1 id="brand-title" class="title">
+                  MadeByUs
+                </h1>
+                <h2 id="brand-subtitle" class="subtitle">
+                  Great software made by great people
+                </h2>
+              </div>
             </div>
-         </div>
+            <div class="column ">
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <router-link to="/home"  active-class='is-active' class="navbar-item">
+                    <span>Home</span>
+                  </router-link>
+                  <router-link to="/projects"  active-class='is-active' class="navbar-item">
+                    <span>Projects</span>
+                  </router-link>
+                  <router-link to="/techstack" active-class='is-active' class="navbar-item">
+                    <span>Tech stack</span>
+                  </router-link>
+                  <router-link to="/services" active-class='is-active' class="navbar-item">
+                    <span>Services</span>
+                  </router-link>
+                  <router-link to="/meetus" active-class='is-active' class="navbar-item">
+                    <span>Meet our team</span>
+                  </router-link>
+                  <router-link to="/contactus" active-class='is-active' class="navbar-item">
+                    <span>Contact us</span>
+                  </router-link>
+                </div>
+             </div>
+            </div>
+          </div>
         </div>
       </section>
       <div class="container is-fullhd">

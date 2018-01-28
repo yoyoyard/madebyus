@@ -126,6 +126,19 @@ new Vue({
   		toggleMenu();
   	});
 
+
+    var scrollOffset = function(e){
+      var e =e || window.event;
+      var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+      if (scrolltop > 70) {
+        $("#navbar").addClass('navbar-fixed-top');
+        $("body").css("padding-top","120px");
+      } else {
+        $("#navbar").removeClass('navbar-fixed-top');
+        $("body").css("padding-top","0px");
+      }
+    }
+
     //resize screen size
     var resizeFun = function(event) {
       if(event.currentTarget.outerWidth < 1024){
@@ -137,6 +150,8 @@ new Vue({
           $("#navbar").addClass('navbar-fixed-top');
           $("body").css("padding-top","120px");
           $("#brand-title").addClass('has-text-centered');
+          $("#brand-title").css("width","180px");
+          $(".brand-pos").css("padding-top","30px");
           $("#brand-subtitle").hide();
       }else{
           $("#humburger").hide();
@@ -147,11 +162,15 @@ new Vue({
           $("#navbar").removeClass('navbar-fixed-top');
           $("body").css("padding-top","0px");
           $("#brand-title").removeClass('has-text-centered');
+          $(".brand-pos").css("padding-top","0px");
           $("#brand-subtitle").show()
+
+          window.onscroll = scrollOffset
       }
     }
     window.onresize = resizeFun
     window.onload = resizeFun
+
 
   }
 })

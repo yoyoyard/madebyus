@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 html, body {
-  height: 100%;
+  /* height: 100%; */  /* Disable the window scroll event */
 }
 
 body {
@@ -21,7 +21,7 @@ body {
 }
 
 .brand-pos {
-  padding-top: 30px;
+  
 }
 
 .navbar-fixed-top {
