@@ -49,13 +49,7 @@ const projects = {
   template:
   `
   <div class="container is-fullhd">
-   <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">
-          All we did
-        </h1>
-      </div>
-    </div>
+   <panel-title name="All we did" />
     <section class="section white-bg">
       <div class="column is-gapless is-multiline is-mobile">
         <project-item name="Flywheel"

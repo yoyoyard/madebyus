@@ -10,11 +10,11 @@
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <link rel="stylesheet" type="text/css" href="./vendors/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./vendors/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" type="text/css" href="./vendors/css/swiper.min.css">
     <script type="text/javascript" src='./vendors/js/jquery.min.js'></script>
     <script type="text/javascript" src="./vendors/js/TweenMax.min.js"></script>
     <script type="text/javascript" src='./vendors/js/jquery.easing.min.js'></script>
-    <script type="text/javascript" src='./vendors/js/blueimp-gallery.js'></script>
+    <script type="text/javascript" src='./vendors/js/swiper.min.js'></script>
   </head>
   <body>
     <div id="root">
@@ -23,10 +23,10 @@
           <div class="columns">
             <div class="column is-two-fifths">
               <div class="brand-pos">
-                <h1 id="brand-title" class="title">
+                <h3 id="brand-title" class="title">
                   MadeByUs
                 </h1>
-                <h2 id="brand-subtitle" class="subtitle">
+                <h4 id="brand-subtitle" class="subtitle">
                   Great software made by great people
                 </h2>
               </div>
@@ -40,14 +40,11 @@
                   <router-link to="/projects"  active-class='is-active' class="navbar-item">
                     <span>Projects</span>
                   </router-link>
-                  <router-link to="/techstack" active-class='is-active' class="navbar-item">
-                    <span>Tech stack</span>
-                  </router-link>
                   <router-link to="/services" active-class='is-active' class="navbar-item">
                     <span>Services</span>
                   </router-link>
                   <router-link to="/meetus" active-class='is-active' class="navbar-item">
-                    <span>Meet our team</span>
+                    <span>Meet us</span>
                   </router-link>
                   <router-link to="/contactus" active-class='is-active' class="navbar-item">
                     <span>Contact us</span>
@@ -62,7 +59,7 @@
          <router-view></router-view>
       </div>
       <div>
-        <div style="position:fixed; bottom:10px; right:10px;">
+        <div style="position:fixed; bottom:10px; right:10px; z-index: 1000">
          <a id="contact-button" class="button is-dark is-large modal-button" style="display: none;" data-target="modal">
            <span id="contact-text">Contact us</span>
            <span id="contact-icon" class="icon is-large has-text-dark" style="display: none;">
@@ -88,14 +85,11 @@
             <router-link to="/projects"  active-class='is-active' class="menu-item">
               <span class="js-blur">Projects</span>
             </router-link>
-            <router-link to="/techstack" active-class='is-active' class="menu-item">
-              <span class="js-blur">Tech stack</span>
-            </router-link>
             <router-link to="/services" active-class='is-active' class="menu-item">
               <span class="js-blur">Services</span>
             </router-link>
             <router-link to="/meetus" active-class='is-active' class="menu-item">
-              <span class="js-blur">Meet our team</span>
+              <span class="js-blur">Meet us</span>
             </router-link>
             <router-link to="/contactus" active-class='is-active' class="menu-item">
               <span class="js-blur">Contact us</span>

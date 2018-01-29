@@ -1,4 +1,4 @@
-Vue.component('service-item', {
+Vue.component('work-service-item', {
   props: ['name', 'desc', 'image_addr'],
   template:
   `
@@ -14,7 +14,7 @@ Vue.component('service-item', {
   `
 })
 
-Vue.component('reverse-service-item', {
+Vue.component('work-service-item-reverse', {
   props: ['name', 'desc', 'image_addr'],
   template:
   `
@@ -34,27 +34,21 @@ const service = {
   template:
   `
   <div class='column'>
-    <div class="hero-body">
-     <div class="container has-text-centered">
-       <h1 class="title">
-         Our services
-       </h1>
-     </div>
-    </div>
+    <panel-title name="Our services" />
     <div class="container">
-     <service-item
+     <work-service-item
        name="Web Design & Development"
        image_addr="./images/services/s1.jpg"
        desc="So its essential to ensure your website design & development are simple, clean and user friendly, to make the users experience enjoyable.
             Whether your a startup or a well established brand, MadeByUs place thought in to every stage of a website from research and planning, to design & development right through to user and browser testing. Making sure your website is on brand and achieves your goals."
        />
     </div>
-    <reverse-service-item
+    <work-service-item-reverse
       name="Craft CMS"
       image_addr="./images/services/s2.jpg"
       desc="Using the best technologies for progressive web apps our engineers expertly architect and implement quality code that is cost effective for you, and is further supported by our design."
       />
-    <service-item
+    <work-service-item
       name="Content Management System"
       image_addr="./images/services/s3.jpg"
       desc="Adding a Content Management System (CMS) in to your website will give you full control to update your website, without asking us to add content for you. And even though our CMS is intuitive, we provide full training to you and your team on how to use it.

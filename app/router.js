@@ -1,6 +1,4 @@
 const project = require('./projects.js')
-const techStack = require('./techstack.js')
-const sampleCode = require('./samplecode.js')
 const service = require('./service.js')
 const meetUs = require('./meetus.js')
 const contactUs = require('./contactus.js')
@@ -12,8 +10,6 @@ const router = new VueRouter({
     { path: '/', redirect: '/home' },
     { path: '/home', name: 'home', component: home },
     { path: '/projects', name: 'projects', component: project },
-    { path: '/techstack', name: 'techstack', component: techStack },
-    { path: '/samplecode', name: 'samplecode', component: sampleCode },
     { path: '/services', name: 'services', component: service },
     { path: '/meetus', name: 'meetus', component: meetUs },
     { path: '/contactus', name: 'contactus', component: contactUs },
@@ -130,7 +126,7 @@ new Vue({
     var scrollOffset = function(e){
       var e =e || window.event;
       var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
-      if (scrolltop > 300) {
+      if (scrolltop > 10) {
         $("#navbar").addClass('navbar-fixed-top');
         $("body").css("padding-top","120px");
       } else {
@@ -148,10 +144,10 @@ new Vue({
           $("#contact-icon").show();
           $("#contact-text").hide();
           $("#navbar").addClass('navbar-fixed-top');
-          $("body").css("padding-top","120px");
+          $("body").css("padding-top","80px");
           $("#brand-title").addClass('has-text-centered');
           $("#brand-title").css("width","180px");
-          $(".brand-pos").css("padding-top","30px");
+          $("#navbar").css("height","60px");
           $("#brand-subtitle").hide();
       }else{
           $("#humburger").hide();
@@ -162,7 +158,7 @@ new Vue({
           $("#navbar").removeClass('navbar-fixed-top');
           $("body").css("padding-top","0px");
           $("#brand-title").removeClass('has-text-centered');
-          $(".brand-pos").css("padding-top","0px");
+          $("#navbar").css("height","85px");
           $("#brand-subtitle").show()
 
           window.onscroll = scrollOffset
