@@ -155,7 +155,7 @@ new Vue({
           $("#contact-button").addClass('button');
           $("#contact-icon").hide();
           $("#contact-text").show();
-          $("#navbar").removeClass('navbar-fixed-top');
+          // $("#navbar").removeClass('navbar-fixed-top');
           $("body").css("padding-top","0px");
           $("#brand-title").removeClass('has-text-centered');
           $("#navbar").css("height","85px");

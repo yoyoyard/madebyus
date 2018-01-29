@@ -33,7 +33,7 @@ Vue.component('work-service-item-reverse', {
 const service = {
   template:
   `
-  <div class='column'>
+  <div class='column' style="padding-bottom: 30px;">
     <panel-title name="Our services" />
     <div class="container">
      <work-service-item
@@ -44,15 +44,20 @@ const service = {
        />
     </div>
     <work-service-item-reverse
-      name="Craft CMS"
+      name="Website maintanance"
       image_addr="./images/services/s2.jpg"
       desc="Using the best technologies for progressive web apps our engineers expertly architect and implement quality code that is cost effective for you, and is further supported by our design."
       />
     <work-service-item
-      name="Content Management System"
+      name="Mobile development"
       image_addr="./images/services/s3.jpg"
       desc="Adding a Content Management System (CMS) in to your website will give you full control to update your website, without asking us to add content for you. And even though our CMS is intuitive, we provide full training to you and your team on how to use it.
             Whether it’s updating a blog, shop opening times, restaurant menus, team profiles or adding products to your website. Our CMS will handle it no problem. There are no limitations with what we can create - as we are bespoke web developers and work with clients of all natures including start ups, medium sized businesses and large global organisations."
+      />
+    <work-service-item-reverse
+      name="Report analysis"
+      image_addr="./images/services/s2.jpg"
+      desc="Using the best technologies for progressive web apps our engineers expertly architect and implement quality code that is cost effective for you, and is further supported by our design."
       />
    </div>
   </div>

@@ -69,7 +69,6 @@ Vue.component('tech-title', {
    <div class="column is-two-fifths">
     <p class="title">Technology stack</p>
     <p class="subtitle" style="margin-top: 5px;">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
-    <a href='/#' style="margin-left: 30px;" class="button is-dark is-outlined">View the detail</a>
     </div>
    <div class="column">
     <div class="grid" style="margin-top: 0px;" />
@@ -149,76 +148,113 @@ Vue.component('team-list', {
 })
 
 Vue.component('tech-item-card', {
-  props: ['name', 'title', 'desc', 'image_profile'],
+  props: ['name', 'tag', 'tag_color', 'image_icon'],
   template:
   `
   <div class="card">
-<div class="card-image">
-  <figure class="image is-4by3">
-    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-  </figure>
-</div>
-<div class="card-content">
-  <div class="media">
-    <div class="media-left">
-      <figure class="image is-48x48">
-        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-      </figure>
+    <div class="card-content has-text-centered">
+     <div class="content">
+      <img :src=image_icon :alt=name style="width: 80px; height: 80px;"/>
+      <p class="title is-4">{{name}}</p>
+      <p class="subtitle is-6"><span :class=tag_color class="tag">{{tag}}</span></p>
+     </div>
     </div>
-    <div class="media-content">
-      <p class="title is-4">John Smith</p>
-      <p class="subtitle is-6">@johnsmith</p>
-    </div>
-  </div>
-
-  <div class="content">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-    <a href="#">#css</a> <a href="#">#responsive</a>
-    <br>
-    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-  </div>
-</div>
-</div>
+   </div>
   `
 })
 
 Vue.component('tech-list', {
   template:
   `
-  <div class="white-bg">
-   <panel-title name="Our technologies" />
-   <div class="team-members row is-centered" style="margin-top: 0px;">
+  <div class="white-bg" style="padding: 0 30px 30px 30px;">
+   <panel-title name="Our technology stack" />
+   <div class="columns">
+    <div class="column">
      <tech-item-card
-        name="Berry Colour"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </tech-item-card>
-     <tech-item-card
-        name="Richard Gan"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </tech-item-card>
-     <tech-item-card
-        name="Roger Luo"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </tech-item-card>
-     <tech-item-card
-        name="Chris Wang"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </tech-item-card>
-     <tech-item-card
-        name="Gary Gao"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </tech-item-card>
-     <tech-item-card
-        name="Berry Tan"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </tech-item-card>
+        name="Ruby on rails"
+        tag="Backend"
+        tag_color="is-success"
+        image_icon="./images/tech/rails-icon.png"
+     />
+     <div class="content" style="background-color: #363636; padding: 20px;">
+
+      <div class="columns" style="height: 6px;">
+       <p style="padding-left: 12px; color: #ffffff;">Modules</p>
+      </div>
+      <div class="columns is-mobile">
+       <div class="column">
+        <img src="./images/tech/devise.png" style="width: 60px; height: 60px;"/>
+       </div>
+       <div class="column">
+        <img src="https://bulma.io/images/placeholders/96x96.png" style="width: 60px; height: 60px;"/>
+       </div>
+       <div class="column">
+        <img src="https://bulma.io/images/placeholders/96x96.png" style="width: 60px; height: 60px;"/>
+       </div>
+       <div class="column">
+        <img src="https://bulma.io/images/placeholders/96x96.png" style="width: 60px; height: 60px;"/>
+       </div>
+      </div>
+
+      <div class="columns" style="height: 6px;">
+       <p style="padding-left: 12px; color: #ffffff;">Testing</p>
+      </div>
+      <div class="columns is-mobile">
+       <div class="column">
+        <img src="./images/tech/rspec.png" style="width: 60px; height: 60px;" />
+       </div>
+       <div class="column">
+        <img src="https://bulma.io/images/placeholders/96x96.png" style="width: 60px; height: 60px;"/>
+       </div>
+       <div class="column">
+        <img src="https://bulma.io/images/placeholders/96x96.png" style="width: 60px; height: 60px;"/>
+       </div>
+       <div class="column">
+        <img src="https://bulma.io/images/placeholders/96x96.png" style="width: 60px; height: 60px;"/>
+       </div>
+      </div>
+
+     </div>
+    </div>
+
+    <div class="column">
+      <tech-item-card
+         name="Ruby on rails"
+         tag="Backend"
+         tag_color="is-success"
+      />
+    </div>
+    <div class="column">
+      <tech-item-card
+         name="Ruby on rails"
+         tag="Backend"
+         tag_color="is-success"
+      />
+    </div>
+   </div>
+
+   <div class="columns">
+    <div class="column">
+      <tech-item-card
+         name="Ruby on rails"
+         tag="Backend"
+         tag_color="is-success"
+      />
+    </div>
+    <div class="column">
+      <tech-item-card
+         name="Ruby on rails"
+         tag="Backend"
+         tag_color="is-success"
+      />
+    </div>
+    <div class="column">
+      <tech-item-card
+         name="Ruby on rails"
+         tag="Backend"
+         tag_color="is-success"
+      />
+    </div>
    </div>
   </div>
   `
@@ -228,9 +264,9 @@ const meetUs = {
   template:
   `
    <div class="container is-fullhd">
-     <tech-title />
-     <team-slides />
      <team-list />
+     <team-slides />
+     <tech-title />
      <tech-list />
    </div>
   `,
