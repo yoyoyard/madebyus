@@ -23,7 +23,6 @@ new Vue({
     contactForm: contactForm,
   },
   mounted: function () {
-
     $('.modal-button').click(function(e) {
         $('.modal').addClass('is-active')
     });
@@ -66,48 +65,48 @@ new Vue({
 
   	function openMenu(){
   		menuIsOpen=true;
-  		TweenMax.to($menu,0.55,{
-  			x:menuWidth,
-  			force3D:false,
-  			ease:Elastic.easeOut,
-  			easeParams:[1.01,0.8]
-  		});
-  		TweenMax.to($menuBg,0.55,{
-  			skewX:0,
-  			force3D:false,
-  			ease:Elastic.easeOut,
-  			easeParams:[1.01,0.8]
-  		});
-  		$menuItem.each(function(i){
-  			TweenMax.to($(this),0.7+(i*0.05),{
-  				delay:0.02*i,
-  				x:0,
-  				force3D:false,
-  				// ease:Quint.easeOut
-  				ease:Elastic.easeOut,
-  				easeParams:[1.1,0.6]
-  			});
-  		});
+      TweenMax.to($menu,0.55,{
+        x:menuWidth,
+        force3D:false,
+        ease:Elastic.easeOut,
+        easeParams:[1.01,0.8]
+      });
+      TweenMax.to($menuBg,0.55,{
+        skewX:0,
+        force3D:false,
+        ease:Elastic.easeOut,
+        easeParams:[1.01,0.8]
+      });
+      $menuItem.each(function(i){
+        TweenMax.to($(this),0.7+(i*0.05),{
+          delay:0.02*i,
+          x:0,
+          force3D:false,
+          // ease:Quint.easeOut
+          ease:Elastic.easeOut,
+          easeParams:[1.1,0.6]
+        });
+      });
   	}
   	function closeMenu(){
   		menuIsOpen=false;
-  		TweenMax.to($menu,0.2,{
-  			x:-100,
-  			ease:Quad.easeIn,
-  			force3D:false
-  		});
-  		TweenMax.set($menuBg,{
-  			delay:0.2,
-  			skewX:menuBgSkew,
-  			force3D:false
-  		});
-  		$menuItem.each(function(i){
-  			TweenMax.to($(this),0.3+(0.05*i),{
-  				x:-menuItemOffset,
-  				ease:Quad.easeIn,
-  				force3D:false
-  			});
-  		});
+      TweenMax.to($menu,0.2,{
+        x:-100,
+        ease:Quad.easeIn,
+        force3D:false
+      });
+      TweenMax.set($menuBg,{
+        delay:0.2,
+        skewX:menuBgSkew,
+        force3D:false
+      });
+      $menuItem.each(function(i){
+        TweenMax.to($(this),0.3+(0.05*i),{
+          x:-menuItemOffset,
+          ease:Quad.easeIn,
+          force3D:false
+        });
+      });
   	}
   	function toggleMenu(){
   		if(menuIsOpen){
@@ -121,7 +120,9 @@ new Vue({
   	$menuToggle.click(function(){
   		toggleMenu();
   	});
-
+    $menuItem.click(function(){
+  		toggleMenu();
+  	});
 
     var scrollOffset = function(e){
       var e =e || window.event;
