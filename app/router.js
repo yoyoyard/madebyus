@@ -8,6 +8,7 @@ const contactForm = require('./contactform.js')
 const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/home' },
+    { path: '/scrollNav*', redirect: '/projects' },
     { path: '/home', name: 'home', component: home },
     { path: '/projects', name: 'projects', component: project },
     { path: '/services', name: 'services', component: service },
