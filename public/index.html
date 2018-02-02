@@ -19,35 +19,35 @@
   </head>
   <body>
     <div id="root">
-      <section id="navbar" class="hero is-dark">
-        <div class="container ">
+      <div id="navbar" class="hero" style="background-color: #ee4f4b;">
+        <div class="container">
           <div class="columns">
             <div class="column is-two-fifths">
               <div class="brand-pos">
                 <h3 id="brand-title" class="title">
-                  MadeByUs
+                  <a href="/"><span class="has-text-white">MadeByUs</span></a>
                 </h1>
-                <h4 id="brand-subtitle" class="subtitle">
+                <h4 id="brand-subtitle" class="subtitle has-text-white">
                   Great software made by great people
                 </h2>
               </div>
             </div>
-            <div class="column ">
+            <div class="column">
               <div id="navbarMenuHeroA" class="navbar-menu">
                 <div class="navbar-end">
-                  <router-link to="/home"  active-class='is-active' class="navbar-item">
+                  <router-link to="/home"  active-class='is-active' class="nav-item actie-nav-item has-text-white">
                     <span>Home</span>
                   </router-link>
-                  <router-link to="/projects"  active-class='is-active' class="navbar-item">
+                  <router-link to="/projects"  active-class='is-active' class="nav-item actie-nav-item has-text-white">
                     <span>Projects</span>
                   </router-link>
-                  <router-link to="/services" active-class='is-active' class="navbar-item">
+                  <router-link to="/services" active-class='is-active' class="nav-item actie-nav-item has-text-white">
                     <span>Services</span>
                   </router-link>
-                  <router-link to="/meetus" active-class='is-active' class="navbar-item">
+                  <router-link to="/meetus" active-class='is-active' class="nav-item actie-nav-item has-text-white">
                     <span>Meet us</span>
                   </router-link>
-                  <router-link to="/contactus" active-class='is-active' class="navbar-item">
+                  <router-link to="/contactus" active-class='is-active' class="nav-item actie-nav-item has-text-white">
                     <span>Contact us</span>
                   </router-link>
                 </div>
@@ -55,17 +55,17 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <div class="container is-fullhd">
          <router-view></router-view>
       </div>
       <div>
         <div style="position:fixed; bottom:10px; right:10px; z-index: 1000">
-         <a id="contact-button" class="button is-dark is-large modal-button" style="display: none;" data-target="modal">
-           <span id="contact-text">Contact us</span>
-           <span id="contact-icon" class="icon is-large has-text-dark" style="display: none;">
-            <i class="fa fa-plus-circle fa-3x"></i>
-          </span>
+         <a id="contact-button" class="button is-large modal-button has-text-white" style="display: none; background-color: #ee4f4b;" data-target="modal">
+           <span id="contact-text" >Contact us</span>
+           <span id="contact-icon" class="icon is-large has-text-danger" style="display: none;">
+            <i class="fa fa-plus-circle fa-4x"></i>
+           </span>
          </a>
         </div>
         <div class="modal" style="z-index: 1001">
@@ -100,15 +100,15 @@
     		<button class="menu-toggle"><span>Open Menu</span></button>
       </div>
     </div>
-    <footer class="footer">
+    <div class="footer" style="background-color: #000000">
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            <strong>@MadeByUs</strong>
+            <strong class="has-text-white">@MadeByUs</strong>
           </p>
         </div>
       </div>
-    </footer>
+    </div>
     <script src="bundle.js"></script>
   </body>
 </html>

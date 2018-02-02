@@ -20,6 +20,132 @@ Vue.component('member-item', {
   `
 })
 
+Vue.component('team-list', {
+  template:
+  `
+  <div>
+   <panel-title name="Meet our team" />
+   <div class="team-members row is-centered" style="margin-top: 0px;">
+     <member-item
+        name="Berry Colour"
+        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+        image_profile="./images/team/member_270x210.jpg" >
+     </member-item>
+     <member-item
+        name="Richard Gan"
+        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+        image_profile="./images/team/member_270x210.jpg" >
+     </member-item>
+     <member-item
+        name="Roger Luo"
+        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+        image_profile="./images/team/member_270x210.jpg" >
+     </member-item>
+     <member-item
+        name="Chris Wang"
+        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+        image_profile="./images/team/member_270x210.jpg" >
+     </member-item>
+     <member-item
+        name="Gary Gao"
+        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+        image_profile="./images/team/member_270x210.jpg" >
+     </member-item>
+     <member-item
+        name="Berry Tan"
+        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
+        image_profile="./images/team/member_270x210.jpg" >
+     </member-item>
+   </div>
+  </div>
+  `
+})
+
+Vue.component('member-item-v2', {
+  props: ['name', 'title', 'image_hover', 'image_unhover'],
+  template:
+  `
+   <div class="column is-3">
+    <a href="#" class="member-profile has-text-centered">
+      <div class="unhover_img">
+      <img :src=image_unhover alt="" />
+      </div>
+      <div class="hover_img">
+      <img :src=image_hover alt=""/>
+      </img>
+      </div>
+    </a>
+    <div class="has-text-centered">
+      <h4 style="min-width: 20px;"><span><strong>{{name}}</strong></h4>
+      <span>{{title}}</span>
+    </div>
+
+  </div>
+  `
+})
+
+Vue.component('team-list-v2', {
+  template:
+  `
+  <div class="container" style="margin-bottom: 30px;">
+   <panel-title name="Meet our team" />
+   <div class="columns is-centered is-mobile" style="margin: 0 40px;">
+     <member-item-v2
+        name="Berry Colour"
+        title="Engineer"
+        image_unhover="./images/team/img/speaker-1.png"
+        image_hover="./images/team/img/speaker-1-hover.png"
+     />
+     <member-item-v2
+        name="Richard Gan"
+        title="Engineer"
+        image_unhover="./images/team/img/speaker-1.png"
+        image_hover="./images/team/img/speaker-1-hover.png"
+     />
+     <member-item-v2
+        name="Roger Luo"
+        title="Engineer"
+        image_unhover="./images/team/img/speaker-1.png"
+        image_hover="./images/team/img/speaker-1-hover.png"
+     />
+     <member-item-v2
+        name="Chris Wang"
+        title="Engineer"
+        image_unhover="./images/team/img/speaker-1.png"
+        image_hover="./images/team/img/speaker-1-hover.png"
+     />
+     </div>
+     <div class="columns is-centered is-mobile" style="margin: 0 40px;">
+     <member-item-v2
+        name="Gary Gao"
+        title="Engineer"
+        image_unhover="./images/team/img/speaker-1.png"
+        image_hover="./images/team/img/speaker-1-hover.png"
+     />
+     <member-item-v2
+        name="Berry Tan"
+        title="Engineer"
+        image_unhover="./images/team/img/speaker-1.png"
+        image_hover="./images/team/img/speaker-1-hover.png"
+      />
+      <member-item-v2
+         name="Gary Gao"
+         title="Engineer"
+         image_unhover="./images/team/img/speaker-1.png"
+         image_hover="./images/team/img/speaker-1-hover.png"
+      />
+      <member-item-v2
+         name="Berry Tan"
+         title="Engineer"
+         image_unhover="./images/team/img/speaker-1.png"
+         image_hover="./images/team/img/speaker-1-hover.png"
+       />
+      </div>
+   </div>
+  </div>
+  `
+})
+
 Vue.component('company-value', {
   template:
   `
@@ -64,16 +190,17 @@ Vue.component('company-value', {
 
 Vue.component('tech-title', {
   template:
-  `
-  <div class="columns" style="padding-left: 40px; padding-top: 60px;">
-   <div class="column is-two-fifths">
-    <p class="title">Technology stack</p>
-    <p class="subtitle" style="margin-top: 5px;">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
+  `<div class="white-bg">
+    <div class="columns" style="padding-left: 40px; padding-top: 60px;">
+     <div class="column is-mobile is-two-fifths">
+      <p class="title">Technology stack</p>
+      <p class="subtitle" style="margin-top: 5px;">We use technologies proven and supported by a large open-source community and adopted by leading companies like Apple, Netflix, Microsoft, and IBM.</p>
+      </div>
+     <div class="column is-mobile">
+      <div class="grid" style="margin-top: 0px;" />
+     </div>
     </div>
-   <div class="column">
-    <div class="grid" style="margin-top: 0px;" />
    </div>
-  </div>
   `
 })
 
@@ -93,57 +220,28 @@ Vue.component('office-images', {
 Vue.component('team-slides', {
   template:
   `
-  <div class="white-bg">
+  <div style="padding-top: 30px;">
    <div class="columns">
     <div class="column is-half" style="padding-bottom: 50px; padding-left: 40px;">
+      <div class="columns is-mobile" style="padding-top: 30px;">
+      <h1>Recent Projects</h1>
+      <a href='/#/projects' style="margin-left: 3px;" class="button is-dark is-outlined">Click for more projects</a>
+      </div>
+      <div class="columns">
       <office-images />
+      </div>
     </div>
     <div class="column is-half">
+      <div class="columns is-mobile" style="padding-top: 30px; padding-left: 30px;">
+      <h1>Our Team</h1>
+      <a href='/#/meetus' style="margin-left: 3px;" class="button is-dark is-outlined">Click for more team-members</a>
+      </div>
+      <div class="columns" style="padding-top: 18px;">
       <company-value />
+      </div>
     </div>
    </div>
  </div>
-  `
-})
-
-Vue.component('team-list', {
-  template:
-  `
-  <div>
-   <panel-title name="Meet our team" />
-   <div class="team-members row is-centered" style="margin-top: 0px;">
-     <member-item
-        name="Berry Colour"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </member-item>
-     <member-item
-        name="Richard Gan"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </member-item>
-     <member-item
-        name="Roger Luo"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </member-item>
-     <member-item
-        name="Chris Wang"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </member-item>
-     <member-item
-        name="Gary Gao"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </member-item>
-     <member-item
-        name="Berry Tan"
-        title="Engineer" desc="Ruby / Python / C++ / Postgresql"
-        image_profile="./images/team/member_270x210.jpg" >
-     </member-item>
-   </div>
-  </div>
   `
 })
 
@@ -166,7 +264,7 @@ Vue.component('tech-item-card', {
 Vue.component('tech-list', {
   template:
   `
-  <div class="white-bg" style="padding: 0 30px 30px 30px;">
+  <div style="padding: 0 30px 30px 30px;">
    <panel-title name="Our technology stack" />
    <div class="columns">
     <div class="column">
@@ -264,8 +362,7 @@ const meetUs = {
   template:
   `
    <div class="container is-fullhd">
-     <team-list />
-     <team-slides />
+     <team-list-v2 />
      <tech-title />
      <tech-list />
    </div>

@@ -88,13 +88,22 @@ Vue.component('left-nav-bar', {
       <span class="scroll-nav__heading">Projects navigation</span>
       <ol class="scroll-nav__list">
         <li class="scroll-nav__item description">
-          <a href="#scrollNav-1" class="scroll-nav__link">Flywheel</a>
+          <a href="#scrollNav-1" class="scroll-nav__link">
+          Flywheel
+          <span class="tag is-success">Mobile</span>
+          </a>
         </li>
         <li class="scroll-nav__item features">
-          <a href="#scrollNav-2" class="scroll-nav__link">McGraw-Hill Education</a>
+          <a href="#scrollNav-2" class="scroll-nav__link">
+          Education
+          <span class="tag is-danger">Desktop</span>
+          </a>
         </li>
         <li class="scroll-nav__item usage active in-view">
-          <a href="#scrollNav-3" class="scroll-nav__link">Learnivore</a>
+          <a href="#scrollNav-3" class="scroll-nav__link">
+          Learnivore
+          <span class="tag is-info">Web App</span>
+          </a>
         </li>
       </ol>
     </div>

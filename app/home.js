@@ -22,7 +22,7 @@ Vue.component('company-title', {
           <p class="subtitle" style="margin-top: 5px;">We understand the challenges faced when embracing new technology and tools. With this in mind, our expert team takes pride in ensuring you’re set up for success.</p>
           <div class="columns">
            <div class="column">
-             <a href='/#/contactus' style="margin-left: 30px;" class="button is-dark is-outlined">Let's build together</a>
+             <a href='/#/contactus' style="margin-left: 30px; background-color: #ee4f4b;" class="button is-outlined has-text-white">Let's build together</a>
            </div>
           </div>
       </div>
@@ -79,7 +79,7 @@ Vue.component('about-us', {
 Vue.component('work-process', {
   template:
   `
-  <div>
+  <div class="white-bg">
    <panel-title name="Our work process" />
    <div style="margin-left: 20px; margin-right: 20px; padding-bottom: 30px;">
     <img src="./images/home/web-design-process.png" />
@@ -121,10 +121,12 @@ const home = {
   `
    <div class="container is-fullhd">
      <company-title />
-     <about-us />
      <work-process />
-     <our-ability />
     </div>
-  `
+  `,
+  mounted: function () {
+
+  }
+
 }
 module.exports = home

@@ -148,7 +148,7 @@ new Vue({
           $("#navbar").addClass('navbar-fixed-top');
           $("body").css("padding-top","80px");
           $("#brand-title").addClass('has-text-centered');
-          $("#brand-title").css("width","180px");
+          $("#brand-title").css("width","200px");
           $("#navbar").css("height","60px");
           $("#brand-subtitle").hide();
       }else{
@@ -157,7 +157,7 @@ new Vue({
           $("#contact-button").addClass('button');
           $("#contact-icon").hide();
           $("#contact-text").show();
-          // $("#navbar").removeClass('navbar-fixed-top');
+          $("#navbar").removeClass('navbar-fixed-top');
           $("body").css("padding-top","0px");
           $("#brand-title").removeClass('has-text-centered');
           $("#navbar").css("height","85px");

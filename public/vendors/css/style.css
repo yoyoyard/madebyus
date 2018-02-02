@@ -6,12 +6,14 @@ html, body {
 body {
   margin: 0;
   overflow: scroll;
+  font-family: 'Calibri', Calibri, Arial, sans-serif;
 }
 
 .white-bg {
   width: 100%;
   height: 100%;
-  background: linear-gradient(#eee, #ccc);
+  /* background: linear-gradient(#eee, #ee4f4b); */
+  background: linear-gradient(#eef, #ee4f4b);
 }
 
 .black-bg {
@@ -31,6 +33,23 @@ body {
   width: 100%;
 }
 
+.nav-item {
+  margin-left: 20px;
+}
+
+.actie-nav-item {
+  border: 3px solid transparent;
+  display: block;
+}
+
+.actie-nav-item:hover {
+  border-bottom: 1px solid #ffffff;
+}
+
+.unified-color {
+  background-color: "#ee4f4b";
+}
+
 .shadow{
 	/*Lets add a shadow*/
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
@@ -39,109 +58,6 @@ body {
 p {
   font-size: 20px;
   font-weight: bold;
-}
-
-/* stack map */
-.selector {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 140px;
-  height: 140px;
-  margin-top: -70px;
-  margin-left: -70px;
-}
-
-.selector, .selector button {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-}
-
-.selector button {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  background: #428bca;
-  border-radius: 50%;
-  border: 0;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  transition: all .1s;
-}
-
-.selector button:hover {
-  background: #3071a9;
-}
-
-.selector button:focus {
-  outline: none;
-}
-
-.selector ul {
-  position: absolute;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  top: -20px;
-  right: -20px;
-  bottom: -20px;
-  left: -20px;
-}
-
-.selector li {
-  position: absolute;
-  width: 0;
-  height: 100%;
-  margin: 0 50%;
-  -webkit-transform: rotate(-360deg);
-  transition: all 0.8s ease-in-out;
-}
-
-.selector li input {
-  display: none;
-}
-
-.selector li input + label {
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  width: 0;
-  height: 0;
-  line-height: 1px;
-  margin-left: 0;
-  background: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 1px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: none;
-  transition: all 0.8s ease-in-out, color 0.1s, background 0.1s;
-}
-
-.selector li input + label:hover {
-  background: #f0f0f0;
-}
-
-.selector li input:checked + label {
-  background: #5cb85c;
-  color: white;
-}
-
-.selector li input:checked + label:hover {
-  background: #449d44;
-}
-
-.selector.open li input + label {
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  margin-left: -40px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
 }
 
 /* contact us form*/
@@ -161,7 +77,7 @@ p {
 }
 
 #contact h3 {
-	color: #F96;
+	color: #ee4f4b;
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
@@ -206,7 +122,7 @@ fieldset {
 	cursor:pointer;
 	width:100%;
 	border:none;
-	background:#363636;
+	background:#ee4f4b;
 	color:#FFF;
 	margin:0 0 5px;
 	padding:10px;
@@ -214,7 +130,7 @@ fieldset {
 }
 
 #contact button[type="submit"]:hover {
-	background:#09C;
+	background:#000000;
 	-webkit-transition:background 0.3s ease-in-out;
 	-moz-transition:background 0.3s ease-in-out;
 	transition:background-color 0.3s ease-in-out;
@@ -372,13 +288,9 @@ p {font-size: 14px; font-weight: 300; line-height: 22px; padding: 0 30px; margin
 .grid img {width: 60px; height: 60px; display: block; float: left;}
 
 /* humburger */
-a {
-	color: #999;
-	text-decoration: none;
-}
 
 a:hover, a:focus {
-	color: #7D87AE;
+	color: #000000;
 	outline: none;
 }
 
@@ -416,7 +328,7 @@ button:focus {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background: #333;
+	background: #ee4f4b;
 	transform-origin: 100% 0;
 }
 
@@ -459,7 +371,7 @@ button:focus {
 	display: block;
 	width: 100%;
 	height: 2px;
-	background-color: #D1D1D1;
+	background-color: #FFFFFF;
 	font-size: 0px;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -481,7 +393,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #D1D1D1;
+	background: #FFFFFF;
 	content: '';
 	-webkit-transition: -webkit-transform 0.2s;
 	transition: transform 0.2s;
@@ -513,7 +425,6 @@ button:focus {
   }
 }
 
-
 /* swiper */
 .swiper-container {
       width: 100%;
@@ -536,4 +447,21 @@ button:focus {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+/* Member Image Hover Effect */
+.hover_img {
+  display: none
+}
+
+.member-profile {
+
+}
+
+.member-profile:hover .unhover_img{
+  display: none;
+}
+
+.member-profile:hover .hover_img {
+  display: block;
 }

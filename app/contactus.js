@@ -4,14 +4,14 @@ Vue.component('contact-info', {
   template:
   `
   <div class="columns is-gapless is-mobile">
-   <div class="column">
+   <div class="column is-4">
      <p>
        <strong>Email Address: </strong>
        <br>
        xxxx@madebyus.com
      </p>
    </div>
-   <div class="column">
+   <div class="column is-3">
      <p style="padding-left: 5px; padding-right: 5px;">
        <strong>Skype: </strong>
        <br>
@@ -33,7 +33,7 @@ Vue.component('contact-buttons', {
   template:
   `
   <div class="columns is-gapless is-mobile">
-   <div class="column is-one-quarter">
+   <div class="column is-one-quarter is-3">
     <p><strong>Follow us:</strong></p>
    </div>
    <div class="column">
