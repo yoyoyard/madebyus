@@ -76,8 +76,8 @@ Vue.component('recent-case-list', {
      </div>
     </div>
     <div class="column has-text-centered">
-      <a href='/#/meetus' style="background-color: #ee4f4b;"
-         class="button is-outlined has-text-white">
+      <a href='/#/projects' style="background-color: #ee4f4b;"
+         class="button is-outlined has-text-white go-to-top">
          {{recentCaseButtonText}}
        </a>
     </div>
@@ -102,7 +102,7 @@ Vue.component('home-member-introduce', {
    </div>
    <div class="column has-text-centered">
      <a href='/#/meetus' style="background-color: #ee4f4b;"
-        class="button is-outlined has-text-white">
+        class="button is-outlined has-text-white go-to-top">
         {{memberIntroduceButtonText}}
       </a>
    </div>
