@@ -1,29 +1,8 @@
-Vue.component('reverse-item', {
-  props: ['name', 'desc', 'image_addr'],
-  template:
-  `
-  <div class="tile is-ancestor">
-    <div class="tile is-vertical is-6">
-      <img :src=image_addr class="shadow"/>
-    </div>
-    <div class="tile is-parent">
-      <div class="tile">
-        <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification ">
-            <p class="title">{{name}}</p>
-            <p class="subtitle">{{desc}}</p>
-            <a href='#'><p>Read More</p></a>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-  `
-})
-
+import projectsData from './projects.data.js';
+import projectsFunc from './projects.mounted.js';
 
 Vue.component('project-item', {
-  props: ['name', 'desc', 'image_addr'],
+  props: ['name', 'projectDesc', 'caseImage'],
   template:
   `
   <div class="tile is-ancestor">
@@ -32,44 +11,31 @@ Vue.component('project-item', {
         <div class="tile is-parent is-vertical">
           <article class="tile is-child notification ">
             <p class="title">{{name}}</p>
-            <p class="subtitle">{{desc}}</p>
+            <p class="subtitle">{{projectDesc}}</p>
             <a href='#'><p>Read More</p></a>
           </article>
         </div>
       </div>
     </div>
     <div class="tile is-vertical is-6">
-      <img :src=image_addr class="shadow"/>
+      <img :src=caseImage class="shadow"/>
     </div>
   </div>
   `
 })
 
 Vue.component('project-list', {
+  props: ['caseList'],
   template:
   `
    <div style="padding-bottom: 30px;">
     <article class="post__article">
-      <section id="scrollNav-1" class="section white-bg">
-        <div class="column is-gapless is-multiline is-mobile">
-          <project-item name="Flywheel"
-           desc="Helping instructors inspire riders through experience and service design."
-           image_addr='./images/projects/p1.jpg' />
-        </div>
-      </section>
-      <section id="scrollNav-2" class="section">
-        <div class="column is-gapless is-multiline is-mobile">
-          <reverse-item name="McGraw-Hill Education"
-          desc="The best educational experiences are adaptive."
-          image_addr='./images/projects/p2.jpg' />
-        </div>
-      </section>
-      <section id="scrollNav-3" class="section white-bg">
+      <section :id=item.id class="section" v-for="item in caseList">
         <div class="column is-gapless is-multiline is-mobile">
           <project-item
-          name="Learnivore"
-          desc="A social platform supporting collaborative learning by connecting instructors and students."
-          image_addr='./images/projects/p3.jpg' />
+           :name=item.name
+           :projectDesc=item.projectDesc
+           :caseImage=item.caseImage />
         </div>
       </section>
     </article>
@@ -78,6 +44,7 @@ Vue.component('project-list', {
 })
 
 Vue.component('left-nav-bar', {
+  props: ['navBarName', 'caseList'],
   template:
   `
   <nav class="scroll-nav fixed"
@@ -85,24 +52,12 @@ Vue.component('left-nav-bar', {
     role="navigation"
   >
     <div class="scroll-nav__wrapper">
-      <span class="scroll-nav__heading">Projects navigation</span>
+      <span class="scroll-nav__heading">{{navBarName}}</span>
       <ol class="scroll-nav__list">
-        <li class="scroll-nav__item description">
-          <a href="#scrollNav-1" class="scroll-nav__link">
-          Flywheel
-          <span class="tag is-success">Mobile</span>
-          </a>
-        </li>
-        <li class="scroll-nav__item features">
-          <a href="#scrollNav-2" class="scroll-nav__link">
-          Education
-          <span class="tag is-danger">Desktop</span>
-          </a>
-        </li>
-        <li class="scroll-nav__item usage active in-view">
-          <a href="#scrollNav-3" class="scroll-nav__link">
-          Learnivore
-          <span class="tag is-info">Web App</span>
+        <li class="scroll-nav__item" v-for="item in caseList">
+          <a :href=item.hrefLink class="scroll-nav__link">
+          {{item.name}}
+          <span class="tag" :class=item.navTag.tagColor>{{item.navTag.tagName}}</span>
           </a>
         </li>
       </ol>
@@ -112,14 +67,15 @@ Vue.component('left-nav-bar', {
 })
 
 Vue.component('project-content', {
+  props: ['navBarName', 'caseList'],
   template:
   `
     <div class="columns">
       <div class="column is-one-fifth">
-       <left-nav-bar />
+       <left-nav-bar :navBarName=navBarName :caseList=caseList />
       </div>
       <div class="column">
-       <project-list />
+       <project-list :caseList=caseList />
       </div>
     </div>
   `
@@ -128,38 +84,16 @@ Vue.component('project-content', {
 
 
 const projects = {
+  data: function () {
+    return projectsData
+  },
   template:
   `
   <div class="container is-fullhd">
-   <panel-title name="All we did" />
-   <project-content />
+   <panel-title :name=projectsTitle />
+   <project-content :navBarName=navBarName :caseList=caseList />
   </div>
-
   `,
-  mounted: function () {
-    $('.post-article').scrollNav({
-    	sections: 'section',
-    	subSections: false,
-    	sectionElem: 'section',
-    	className: 'scroll-nav',
-    	showHeadline: true,
-    	headlineText: 'Scroll To',
-    	showTopLink: true,
-    	topLinkText: 'Top',
-    	fixedMargin: 40,
-    	scrollOffset: 0,
-    	animated: true,
-    	speed: 500,
-    	insertTarget: this.selector,
-    	insertLocation: 'insertBefore',
-    	activeClass: 'active',
-    	arrowKeys: false,
-    	scrollToHash: true,
-    	onInit: null,
-    	onRender: null,
-    	onDestroy: null
-    });
-
-  }
+  mounted: projectsFunc,
 }
-module.exports = projects
+export default projects

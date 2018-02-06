@@ -1,35 +1,23 @@
-const contactForm = require('./contactform.js')
+import contactForm from './shared-component.js'
+import contactUsData from './contactus.data.js'
 
-Vue.component('contact-info', {
+Vue.component('contact-us-info', {
+  props: ['contactUsInfo'],
   template:
   `
   <div class="columns is-gapless is-mobile">
-   <div class="column is-4">
+   <div class="column is-5" v-for="info in contactUsInfo">
      <p>
-       <strong>Email Address: </strong>
+       <strong>{{info.name}}</strong>
        <br>
-       xxxx@madebyus.com
-     </p>
-   </div>
-   <div class="column is-3">
-     <p style="padding-left: 5px; padding-right: 5px;">
-       <strong>Skype: </strong>
-       <br>
-       xxxx@madebyus.com
-     </p>
-   </div>
-   <div class="column">
-     <p style="padding-left: 5px; padding-right: 5px;">
-       <strong>Telephone: </strong>
-       <br>
-       0212-634255309
+       {{info.value}}
      </p>
    </div>
   </div>
   `
 })
 
-Vue.component('contact-buttons', {
+Vue.component('contact-us-buttons', {
   template:
   `
   <div class="columns is-gapless is-mobile">
@@ -57,25 +45,29 @@ Vue.component('contact-buttons', {
   `
 })
 
-Vue.component('contact-title', {
+Vue.component('contact-us-title', {
+  props: ['contactUsTitle', 'contactUsSubTitle'],
   template:
   `
   <div class="column is-four-fifths">
-      <p class="title">Let’s build something great together</p>
-      <p class="subtitle" style="margin-top: 5px;">Whatever your ambition, we’d love to design and build your next big idea or lend a hand on an existing one.</p>
+    <p class="title">{{contactUsTitle}}</p>
+    <p class="subtitle" style="margin-top: 5px;">{{contactUsSubTitle}}</p>
   </div>
   `
 })
 
 const contactUs = {
+  data: function () {
+    return contactUsData
+  },
   template:
   `
   <div class='columns' style="padding-bottom: 30px; padding-top: 30px;">
     <div class="column is-half">
-      <contact-title />
+      <contact-us-title :contactUsTitle=contactUsTitle :contactUsSubTitle=contactUsSubTitle />
       <div class="column">
-        <contact-info />
-        <contact-buttons />
+        <contact-us-info :contactUsInfo=contactUsInfo />
+        <contact-us-buttons />
       </div>
     </div>
     <div class="column">
@@ -84,4 +76,4 @@ const contactUs = {
    </div>
   `
 }
-module.exports = contactUs
+export default contactUs

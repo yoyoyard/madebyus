@@ -1,4 +1,4 @@
-const contactForm = Vue.component('contact-form', {
+export const contactForm = Vue.component('contact-form', {
   template:
   `
   <div id="form_container" class="shadow">
@@ -25,4 +25,18 @@ const contactForm = Vue.component('contact-form', {
   `
 })
 
-module.exports = contactForm
+export const panelTitle = Vue.component('panel-title', {
+  props: ['name'],
+  template:
+  `
+  <div class="hero-body">
+   <div class="container has-text-centered">
+     <h1 class="title">
+       {{name}}
+     </h1>
+   </div>
+  </div>
+  `
+})
+
+export default contactForm
