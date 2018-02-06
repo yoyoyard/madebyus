@@ -6,7 +6,7 @@ Vue.component('service-item', {
   `
   <div class="columns">
    <div class="column">
-     <p class="title"><strong>{{name}}</strong></p>
+     <h5 class="title">{{name}}</h5>
      <p>{{desc}}</p>
    </div>
    <div class="column">
@@ -25,7 +25,7 @@ Vue.component('service-item-reverse', {
     <img :src=serviceImage class="shadow"/>
    </div>
    <div class="column">
-     <p class="title"><strong>{{name}}</strong></p>
+     <h5 class="title">{{name}}</h5>
      <p>{{desc}}</p>
    </div>
   </div>
