@@ -92,10 +92,7 @@ Vue.component('home-member-introduce', {
    <div class="columns is-centered" style="margin: 0 40px;">
      <member-item v-for="member in memberStars"
         :key=member.id
-        :name=member.name
-        :title=member.title
-        :image_unhover=member.imageUnhover
-        :image_hover=member.imageHover
+        :memberInfo=member
      />
    </div>
    <div class="column has-text-centered">

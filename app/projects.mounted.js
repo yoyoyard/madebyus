@@ -21,6 +21,8 @@ const projectsFunc = function () {
     onRender: null,
     onDestroy: null
   });
+
+  $('#contact-button-div').show();
 }
 
 export default projectsFunc

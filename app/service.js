@@ -7,7 +7,7 @@ Vue.component('service-item', {
   <div class="columns">
    <div class="column">
      <h5 class="title">{{name}}</h5>
-     <p>{{desc}}</p>
+     <span>{{desc}}</span>
    </div>
    <div class="column">
     <img :src=serviceImage class="shadow"/>
@@ -26,7 +26,7 @@ Vue.component('service-item-reverse', {
    </div>
    <div class="column">
      <h5 class="title">{{name}}</h5>
-     <p>{{desc}}</p>
+     <span>{{desc}}</span>
    </div>
   </div>
   `
@@ -64,6 +64,9 @@ const service = {
     />
    </div>
   </div>
-  `
+  `,
+  mounted: function() {
+    $('#contact-button-div').show();
+  }
 }
 export default service

@@ -74,6 +74,9 @@ const contactUs = {
      <contact-form />
     </div>
    </div>
-  `
+  `,
+  mounted: function() {
+    $('#contact-button-div').hide();
+  }
 }
 export default contactUs

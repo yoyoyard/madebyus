@@ -1,5 +1,7 @@
 const meetUsFunc = function () {
 
+  $('#contact-button-div').show();
+
   $('.member-profile').click(function(e) {
       $('.cv-modal').addClass('is-active');
       $("body").addClass("modal-open");
