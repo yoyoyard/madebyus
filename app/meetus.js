@@ -28,7 +28,7 @@ Vue.component('member-list', {
   `
   <div class="container" style="margin-bottom: 30px;">
    <panel-title :name=meetUsTitle />
-   <div class="columns is-centered is-mobile" style="margin: 0 40px;">
+   <div class="columns is-centered" style="margin: 0 40px;">
      <member-item v-for="member in members"
         :key=member.id
         :name=member.name
@@ -51,7 +51,7 @@ Vue.component('tech-stack-title', {
       <p class="subtitle" style="margin-top: 5px;">{{techStackDesc}}</p>
       </div>
      <div class="column is-mobile">
-      <div class="grid" style="margin-top: 0px;" />
+      <div class="image_wall_grid" style="margin-top: 0px;" />
      </div>
     </div>
    </div>

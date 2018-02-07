@@ -10,16 +10,19 @@ const homeData = {
   recentCaseList: [
     {
       id: 1,
+      name: "project1",
       desc: "xxdsadasdas",
       caseImage: "./images/services/s1.jpg"
     },
     {
       id: 2,
+      name: "project2",
       desc: "xxdsadasdas",
       caseImage: "./images/services/s2.jpg"
     },
     {
       id: 3,
+      name: "project3",
       desc: "xxdsadasdas",
       caseImage: "./images/services/s2.jpg"
     }

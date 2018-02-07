@@ -45,22 +45,20 @@ Vue.component('work-process-introduce', {
 })
 
 Vue.component('recent-case-card', {
-  props: ['desc', 'caseImage'],
+  props: ['name', 'desc', 'caseImage'],
   template:
   `
   <div class="card">
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <img :src=caseImage alt="">
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="content">
-       {{desc}}
-       <a href="/#/projects">View more cases</a>.
+   <div class="card-image">
+     <div class="hovereffect">
+      <img class="img-responsive" :src=caseImage alt="" style="width: 400px; height: 250px;" />
+      <div class="overlay">
+       <h2>{{desc}}</h2>
+       <a class="info" href="/#/projects">Read more</a>
       </div>
-    </div>
-  </div>
+     </div>
+   </div>
+ </div>
  `
 })
 
@@ -70,9 +68,9 @@ Vue.component('recent-case-list', {
   `
   <div class="container is-mobile">
     <panel-title :name=recentCaseTitle />
-    <div class="columns is-centered is-mobile">
-     <div class="column is-3" v-for="item in recentCaseList">
-      <recent-case-card :desc=item.desc :caseImage=item.caseImage />
+    <div class="columns is-centered ">
+     <div class="column is-4" v-for="item in recentCaseList">
+      <recent-case-card :name=item.name :desc=item.desc :caseImage=item.caseImage />
      </div>
     </div>
     <div class="column has-text-centered">
@@ -91,7 +89,7 @@ Vue.component('home-member-introduce', {
   `
   <div class="white-bg">
    <panel-title :name=memberIntroduceTitle />
-   <div class="columns is-centered is-mobile" style="margin: 0 40px;">
+   <div class="columns is-centered" style="margin: 0 40px;">
      <member-item v-for="member in memberStars"
         :key=member.id
         :name=member.name

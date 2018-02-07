@@ -10,7 +10,7 @@ const meetUsData = {
     },
     {
       id: 2,
-      name: "Berry Colour",
+      name: "Berry Tan",
       title: "Engineer",
       imageUnhover: "./images/team/img/speaker-1.png",
       imageHover: "./images/team/img/speaker-1-hover.png",

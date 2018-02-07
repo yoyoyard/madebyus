@@ -1,12 +1,12 @@
 const meetUsFunc = function () {
-  //Creating 50 thumbnails inside .grid
+  //Creating 50 thumbnails inside .image_wall_grid
   //the images are stored on the server serially. So we can use a loop to generate the HTML.
   var images = "", count = 50;
   for(var i = 1; i <= count; i++)
     images += '<img src="http://thecodeplayer.com/u/uifaces/'+i+'.jpg" class="image_wall" />';
 
-  //appending the images to .grid
-  $(".grid").append(images);
+  //appending the images to .image_wall_grid
+  $(".image_wall_grid").append(images);
 
   var d = 0; //delay
   var ry, tz, s; //transform params
