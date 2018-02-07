@@ -2,10 +2,12 @@ const meetUsFunc = function () {
 
   $('.member-profile').click(function(e) {
       $('.cv-modal').addClass('is-active');
+      $("body").addClass("modal-open");
   });
 
   $('.cv-modal-close').click(function(e) {
       $('.cv-modal').removeClass('is-active');
+      $("body").removeClass("modal-open");
   });
 
   //Creating 50 thumbnails inside .image_wall_grid
