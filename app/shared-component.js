@@ -39,4 +39,4 @@ export const panelTitle = Vue.component('panel-title', {
   `
 })
 
-export default contactForm
+export default contactForm;

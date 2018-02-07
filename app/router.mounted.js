@@ -1,10 +1,10 @@
 const routerFunc = function () {
   $('.modal-button').click(function(e) {
-      $('.modal').addClass('is-active');
+      $('.contact-modal').addClass('is-active');
   });
 
   $('.modal-close').click(function(e) {
-      $('.modal').removeClass('is-active');
+      $('.contact-modal').removeClass('is-active');
   });
 
   //Hamburger

@@ -1,4 +1,13 @@
 const meetUsFunc = function () {
+
+  $('.member-profile').click(function(e) {
+      $('.cv-modal').addClass('is-active');
+  });
+
+  $('.cv-modal-close').click(function(e) {
+      $('.cv-modal').removeClass('is-active');
+  });
+
   //Creating 50 thumbnails inside .image_wall_grid
   //the images are stored on the server serially. So we can use a loop to generate the HTML.
   var images = "", count = 50;

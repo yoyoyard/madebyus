@@ -53,7 +53,7 @@ Vue.component('recent-case-card', {
      <div class="hovereffect">
       <img class="img-responsive" :src=caseImage alt="" style="width: 400px; height: 250px;" />
       <div class="overlay">
-       <h2>{{desc}}</h2>
+       <h2>{{name}}</h2>
        <a class="info" href="/#/projects">Read more</a>
       </div>
      </div>

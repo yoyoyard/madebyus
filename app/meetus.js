@@ -1,21 +1,55 @@
 import meetUsData from './meetus.data.js';
-import meetUsFunc from './meetus.mounted.js'
+import meetUsFunc from './meetus.mounted.js';
+import cv from './cv.js';
+var bus = new Vue()
+
+Vue.component('resume-modal', {
+  props: ['members'],
+  data: function(){
+    return({id: 1})
+    },
+  created: function(){
+    bus.$on('id-selected', function(id){
+    this.id = id
+   }.bind(this));
+  },
+  template: `
+  <div class="modal cv-modal" style="z-index: 1001">
+    <div class="modal-background"></div>
+    <div class="modal-content" style="width: 1100px;">
+      <resume :resumeInfo=members[id-1] />
+    </div>
+    <button class="modal-close cv-modal-close is-large" aria-label="close"></button>
+  </div>
+  `
+})
 
 Vue.component('member-item', {
-  props: ['name', 'title', 'image_hover', 'image_unhover'],
+  props: ['memberInfo'],
+  methods: {
+    getId: function(id) {
+      bus.$emit('id-selected', id)
+    }
+  },
   template:
   `
    <div class="column is-3">
-    <a href="#" class="member-profile has-text-centered">
+    <a id="memeber-image"
+      class="member-profile has-text-centered"
+      v-on:click="getId(memberInfo.id)"
+      data-target="cv-modal" >
       <div class="unhover_img">
-      <img :src=image_unhover alt="" />
+      <img :src=memberInfo.imageUnhover alt="" />
       </div>
       <div class="hover_img">
-      <img :src=image_hover alt="" />
+      <img :src=memberInfo.imageHover alt="" />
       </div>
     </a>
     <div class="has-text-centered">
-      <h6 style="min-width: 40px;"><strong>{{name}}</strong><span class="tag is-light">{{title}}</span></h6>
+      <h6 style="min-width: 40px;">
+       <strong>{{memberInfo.name}}</strong>
+       <span class="tag is-light">{{memberInfo.title}}</span>
+      </h6>
     </div>
   </div>
   `
@@ -31,10 +65,7 @@ Vue.component('member-list', {
    <div class="columns is-centered" style="margin: 0 40px;">
      <member-item v-for="member in members"
         :key=member.id
-        :name=member.name
-        :title=member.title
-        :image_unhover=member.imageUnhover
-        :image_hover=member.imageHover
+        :memberInfo=member
      />
    </div>
   </div>
@@ -117,6 +148,7 @@ const meetUs = {
      <member-list :members=members :meetUsTitle=meetUsTitle />
      <tech-stack-title :techStackTitle=techStackTitle :techStackDesc=techStackDesc />
      <tech-stack-list :techStackContentTitle=techStackContentTitle :techStackList=techStackList />
+     <resume-modal :members=members />
    </div>
   `,
   mounted: meetUsFunc,
