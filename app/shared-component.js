@@ -26,12 +26,12 @@ export const contactForm = Vue.component('contact-form', {
 })
 
 export const panelTitle = Vue.component('panel-title', {
-  props: ['name'],
+  props: ['name', 'color'],
   template:
   `
-  <div class="hero-body">
-   <div class="container has-text-centered">
-     <h1 class="title">
+  <div class="container" style="padding-top: 30px;">
+   <div class="has-text-centered">
+     <h1 class="title" :style="'color: ' +color+';'">
        {{name}}
      </h1>
    </div>

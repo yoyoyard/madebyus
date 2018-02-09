@@ -1,5 +1,5 @@
 const projectsData = {
-  projectsTitle: "All we did",
+  projectsTitle: "Our cases",
   navBarName: "Projects navigation",
   caseList: [
     {

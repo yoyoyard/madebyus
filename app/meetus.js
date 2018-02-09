@@ -16,7 +16,7 @@ Vue.component('resume-modal', {
   template: `
   <div class="modal cv-modal" style="z-index: 1001">
     <div class="modal-background"></div>
-    <div class="modal-content" style="width: 1100px;">
+    <div class="modal-content" style="width: 1200px;">
       <resume :resumeInfo=members[id-1] />
     </div>
     <button class="modal-close cv-modal-close is-large" aria-label="close"></button>
