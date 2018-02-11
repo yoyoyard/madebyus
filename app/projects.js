@@ -20,7 +20,7 @@ Vue.component('project-item', {
             <span class="subtitle">{{caseItem.projectDesc}}</span>
             <br />
             <div class="has-text-right">
-              <a href='#'>Read More ></a>
+              <a href='./cases/caseview.html'>Read More ></a>
             </div>
           </div>
         </div>

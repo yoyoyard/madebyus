@@ -1,0 +1,30 @@
+/* Example style */
+.wrap {
+	font-size: 14px;
+	line-height: 1.8;
+	font-family: Helvetica, Arial, Sans-Serif;
+	width: 100%;
+	max-width: 600px;
+	padding: 10px 0 0;
+	margin: 0 auto;
+	color: #202020;
+	min-width: 200px;
+}
+a {
+	color: #2ecc71;
+}
+h1, p, img, ul {
+	display: block;
+	margin-bottom: 40px;
+}
+h1 {
+	text-align: center;
+	font-size: 32px;
+}
+p {
+	text-align: justify;
+	padding: 0 20px;
+}
+img {
+	width: 100%;
+}

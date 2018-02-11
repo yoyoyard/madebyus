@@ -30,7 +30,7 @@ const projectsFunc = function () {
   });
 
   $('.go-to-top').click(function(e) {
-    jQuery('html,body').animate({scrollTop:0},0);
+    $('html,body').animate({scrollTop:0},0);
   });
 
   // nav bar popup
