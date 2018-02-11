@@ -59,7 +59,7 @@ Vue.component('contact-us-title', {
 Vue.component('google-map', {
   template:
   `
-   <div id="google-map" style="width: 480px; height: 480px;"></div>
+   <div id="google-map" class="shadow" style="width: 480px; height: 480px;"></div>
   `
 })
 

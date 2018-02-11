@@ -29,7 +29,7 @@ export const panelTitle = Vue.component('panel-title', {
   props: ['name', 'color'],
   template:
   `
-  <div class="container" style="padding-top: 30px;">
+  <div class="container" style="padding-top: 20px; padding-bottom: 10px;">
    <div class="has-text-centered">
      <h1 class="title" :style="'color: ' +color+';'">
        {{name}}

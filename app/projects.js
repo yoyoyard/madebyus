@@ -2,23 +2,33 @@ import projectsData from './projects.data.js';
 import projectsFunc from './projects.mounted.js';
 
 Vue.component('project-item', {
-  props: ['name', 'projectDesc', 'caseImage'],
+  props: ['caseItem'],
   template:
   `
   <div class="tile is-ancestor">
     <div class="tile is-parent">
       <div class="tile">
         <div class="tile is-parent is-vertical">
-          <article class="tile is-child notification ">
-            <p class="title">{{name}}</p>
-            <p class="subtitle">{{projectDesc}}</p>
-            <a href='#'><p>Read More</p></a>
-          </article>
+          <div class="tile is-child notification">
+            <span class="title">{{caseItem.name}}</span>
+            <br />
+            <span class="tag" style="margin-left: 3px;" :class=item.color v-for="item in caseItem.projectTags">
+             {{item.name}}
+            </span>
+            <br />
+            <br />
+            <span class="subtitle">{{caseItem.projectDesc}}</span>
+            <br />
+            <div class="has-text-right">
+              <a href='#'>Read More ></a>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
     <div class="tile is-vertical is-6">
-      <img :src=caseImage class="shadow"/>
+      <img :src=caseItem.caseImage class="shadow"/>
     </div>
   </div>
   `
@@ -29,13 +39,15 @@ Vue.component('project-list', {
   template:
   `
    <div style="padding-bottom: 30px;">
+    <div id="st-trigger-effects" style="position: fixed; top: 10; z-index: 1000px;" >
+     <button style="background-color: #ee4f4b;" class="is-outlined has-text-white go-to-top" data-effect="st-effect-3">
+      <i class="far fa-caret-square-down fa-3x"></i>
+     </button>
+    </div>
     <article class="post__article">
       <section :id=item.id class="section" v-for="item in caseList">
         <div class="column is-gapless is-multiline is-mobile">
-          <project-item
-           :name=item.name
-           :projectDesc=item.projectDesc
-           :caseImage=item.caseImage />
+          <project-item :caseItem=item />
         </div>
       </section>
     </article>
@@ -47,21 +59,16 @@ Vue.component('left-nav-bar', {
   props: ['navBarName', 'caseList'],
   template:
   `
-  <nav class="scroll-nav fixed"
-    style="position:fixed; left:50px; top:200px; z-index: 1000"
-    role="navigation"
-  >
-    <div class="scroll-nav__wrapper">
-      <span class="scroll-nav__heading">{{navBarName}}</span>
-      <ol class="scroll-nav__list">
-        <li class="scroll-nav__item" v-for="item in caseList">
-          <a :href=item.hrefLink class="scroll-nav__link">
-          {{item.name}}
-          <span class="tag" :class=item.navTag.tagColor>{{item.navTag.tagName}}</span>
-          </a>
-        </li>
-      </ol>
-    </div>
+  <nav class="st-menu st-effect-3 scroll-nav" id="menu-3">
+    <h4>{{navBarName}}</h4>
+    <ul>
+      <li v-for="item in caseList">
+        <a :href=item.hrefLink class="project-nav-item">
+        {{item.name}}
+        <span style="margin: 10px; 0;" class="tag" :class=item.navTag.tagColor>{{item.navTag.tagName}}</span>
+        </a>
+      </li>
+    </ul>
   </nav>
   `
 })
@@ -70,13 +77,15 @@ Vue.component('project-content', {
   props: ['navBarName', 'caseList'],
   template:
   `
-    <div class="columns">
-      <div class="column is-one-fifth">
-       <left-nav-bar :navBarName=navBarName :caseList=caseList />
-      </div>
-      <div class="column">
-       <project-list :caseList=caseList />
-      </div>
+    <div id="st-container" class="st-container">
+    	<div class="st-pusher">
+    		<left-nav-bar :navBarName=navBarName :caseList=caseList />
+    		<div class="st-content">
+    			<div class="st-content-inner">
+    				 <project-list :caseList=caseList />
+    			</div>
+    		</div>
+    	</div>
     </div>
   `
 })
@@ -90,7 +99,6 @@ const projects = {
   template:
   `
   <div class="container is-fullhd">
-   <panel-title :name=projectsTitle />
    <project-content :navBarName=navBarName :caseList=caseList />
   </div>
   `,

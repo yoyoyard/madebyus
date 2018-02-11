@@ -66,9 +66,9 @@ Vue.component('recent-case-list', {
   props: ['recentCaseTitle', 'recentCaseList', 'recentCaseButtonText'],
   template:
   `
-  <div class="container is-mobile">
+  <div class="container">
     <panel-title :name=recentCaseTitle />
-    <div class="columns is-centered ">
+    <div class="columns is-mobile is-centered ">
      <div class="column is-4" v-for="item in recentCaseList">
       <recent-case-card :name=item.name :desc=item.desc :caseImage=item.caseImage />
      </div>
@@ -89,7 +89,7 @@ Vue.component('home-member-introduce', {
   `
   <div class="white-bg">
    <panel-title :name=memberIntroduceTitle />
-   <div class="columns is-centered" style="margin: 0 40px;">
+   <div class="columns is-mobile is-centered" style="margin: 0 40px;">
      <member-item v-for="member in memberStars"
         :key=member.id
         :memberInfo=member

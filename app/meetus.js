@@ -62,7 +62,7 @@ Vue.component('member-list', {
   `
   <div class="container" style="margin-bottom: 30px;">
    <panel-title :name=meetUsTitle />
-   <div class="columns is-centered" style="margin: 0 40px;">
+   <div class="columns is-mobile is-centered" style="margin: 0 40px;">
      <member-item v-for="member in members"
         :key=member.id
         :memberInfo=member
@@ -75,13 +75,13 @@ Vue.component('member-list', {
 Vue.component('tech-stack-title', {
   props: ['techStackTitle', 'techStackDesc'],
   template:
-  `<div class="white-bg">
+  `<div class="white-bg tech-stack-title-panel">
     <div class="columns" style="padding-left: 40px; padding-top: 60px;">
      <div class="column is-mobile is-two-fifths">
       <p class="title">{{techStackTitle}}</p>
       <p class="subtitle" style="margin-top: 5px;">{{techStackDesc}}</p>
       </div>
-     <div class="column is-mobile">
+     <div class="column">
       <div class="image_wall_grid" style="margin-top: 0px;" />
      </div>
     </div>
@@ -109,9 +109,9 @@ Vue.component('tech-stack-list', {
   props: ['techStackContentTitle', 'techStackList'],
   template:
   `
-  <div style="padding: 0 30px 30px 30px;">
+  <div id="tech-stack-list-id" style="padding: 0 30px 30px 30px;">
    <panel-title :name=techStackContentTitle />
-   <div class="columns">
+   <div class="columns" style="margin-top: 10px;">
     <div class="column is-3" v-for="techStackItem in techStackList">
      <tech-item-card
         :key=techStackItem.id
@@ -126,7 +126,7 @@ Vue.component('tech-stack-list', {
       <div class="columns" style="height: 14px;">
        <p style="padding-left: 12px; color: #ffffff;">{{techStackItem.dependency.name}}</p>
       </div>
-      <div class="columns is-mobile" >
+      <div class="columns is-mobile is-gapless" >
        <div class="column is-3" v-for="item in techStackItem.dependency.dependencyList">
         <img :src=item style="width: 40px; height: 40px;"/>
        </div>

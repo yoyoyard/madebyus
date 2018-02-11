@@ -9,6 +9,10 @@ const routerFunc = function () {
       $("body").removeClass("modal-open");
   });
 
+  $('.go-to-top').click(function(e) {
+    jQuery('html,body').animate({scrollTop:0},0);
+  });
+
   //Hamburger
   var menuIsOpen=false,
     $menu=$(".menu"),
@@ -101,6 +105,7 @@ const routerFunc = function () {
   $menuItem.click(function(){
     toggleMenu();
   });
+  /* ----- end ----- */
 
   var scrollOffset = function(e){
     var e =e || window.event;
@@ -120,18 +125,27 @@ const routerFunc = function () {
         $("#humburger").show();
         $("#contact-button").show();
         $("#contact-button").removeClass('button');
+        $("#contact-button").css("background-color", "");
         $("#contact-icon").show();
         $("#contact-text").hide();
         $("#navbar").addClass('navbar-fixed-top');
-        $("body").css("padding-top","80px");
+        $("body").css("padding-top","60px");
         $("#brand-title").addClass('has-text-centered');
         $("#brand-title").css("width","200px");
         $("#navbar").css("height","60px");
         $("#brand-subtitle").hide();
+
+        //Service page
+        $(".service-item-image").css('display', 'none');
+
+        //Meetus page
+        $(".tech-stack-title-panel").css('display', 'none');
+        $("#tech-stack-list-id").addClass('white-bg');
     }else{
         $("#humburger").hide();
         $("#contact-button").show();
         $("#contact-button").addClass('button');
+        $("#contact-button").css("background-color", "#ee4f4b");
         $("#contact-icon").hide();
         $("#contact-text").show();
         $("#navbar").removeClass('navbar-fixed-top');
@@ -139,6 +153,13 @@ const routerFunc = function () {
         $("#brand-title").removeClass('has-text-centered');
         $("#navbar").css("height","85px");
         $("#brand-subtitle").show();
+
+        //Service page
+        $(".service-item-image").css('display', 'block');
+
+        //Meetus page
+        $(".tech-stack-title-panel").css('display', 'block');
+        $("#tech-stack-list-id").removeClass('white-bg');
 
         window.onscroll = scrollOffset;
     }

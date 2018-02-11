@@ -10,8 +10,15 @@ const projectsData = {
         tagName: "Mobile",
         tagColor: "is-success",
       },
-      projectTag: [
-
+      projectTags: [
+        {
+          name: "Angular.js",
+          color: "is-danger",
+        },
+        {
+          name: "Python",
+          color: "is-success",
+        },
       ],
       projectDesc: "Helping instructors inspire riders through experience and service design.",
       caseImage: "./images/projects/p1.jpg",
@@ -24,8 +31,15 @@ const projectsData = {
         tagName: "Desktop",
         tagColor: "is-danger",
       },
-      projectTag: [
-
+      projectTags: [
+        {
+          name: "Rails",
+          color: "is-danger",
+        },
+        {
+          name: "Vue.js",
+          color: "is-success",
+        },
       ],
       projectDesc: "The best educational experiences are adaptive.",
       caseImage: "./images/projects/p2.jpg",
@@ -38,8 +52,15 @@ const projectsData = {
         tagName: "WebApp",
         tagColor: "is-info",
       },
-      projectTag: [
-
+      projectTags: [
+        {
+          name: "React Native",
+          color: "is-info",
+        },
+        {
+          name: "Vue.js",
+          color: "is-success",
+        },
       ],
       projectDesc: "A social platform supporting collaborative learning by connecting instructors and students.",
       caseImage: "./images/projects/p3.jpg",

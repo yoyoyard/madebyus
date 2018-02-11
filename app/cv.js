@@ -4,14 +4,14 @@ export const cv = Vue.component('resume', {
   `
   <div class="container">
     <panel-title name="Profile" color="#ffffff" />
-    <div id="user-profile" class="columns has-text-centered">
+    <div id="user-profile" class="columns has-text-centered" style="margin-top: 10px;">
      <div class="column is-one-quarter">
        <p style="color: #ffffff;">{{resumeInfo.fullName}}</p>
        <p style="color: #ffffff;">Age: {{resumeInfo.age}}</p>
        <p style="color: #ffffff;">Working: {{resumeInfo.workYears}} years</p>
        <p>
          <span class="icon is-large">
-          <a :href=resumeInfo.github target="_blank" title="Github"><i class="fab fa-github fa-1x"></i></a>&nbsp
+          <a :href=resumeInfo.github target="_blank" title="Github"><i class="fab fa-github fa-1x"></i></a>&nbsp;
           <a :href=resumeInfo.blog target="_blank" alt="Blog"><i class="fab fa-blogger fa-1x"></i></a>
          </span>
        </p>
@@ -22,7 +22,7 @@ export const cv = Vue.component('resume', {
     </div>
 
     <panel-title name="Skills" color="#ffffff" />
-    <div class="columns is-multiline">
+    <div class="columns is-multiline" style="margin-top: 10px;">
      <div class="column is-4" style="padding-top:  0px;" v-for="item in resumeInfo.skills">
       <p style="color: #ffffff">{{item.name}}</p>
       <div class="cssProgress">

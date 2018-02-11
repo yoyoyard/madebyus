@@ -9,7 +9,7 @@ Vue.component('service-item', {
      <h5 class="title">{{name}}</h5>
      <span>{{desc}}</span>
    </div>
-   <div class="column">
+   <div class="column service-item-image">
     <img :src=serviceImage class="shadow"/>
    </div>
   </div>
@@ -21,7 +21,7 @@ Vue.component('service-item-reverse', {
   template:
   `
   <div class="columns">
-   <div class="column">
+   <div class="column service-item-image">
     <img :src=serviceImage class="shadow"/>
    </div>
    <div class="column">
