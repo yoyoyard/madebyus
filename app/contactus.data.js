@@ -1,5 +1,5 @@
 const contactUsData = {
-  contactUsTitle: "Let’s build something great together",
+  contactUsTitle: "Contact",
   contactUsSubTitle: "Whatever your ambition, we’d love to design and build your next big idea or lend a hand on an existing one.",
   contactUsInfo: [
     {

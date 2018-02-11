@@ -11,8 +11,8 @@ export const cv = Vue.component('resume', {
        <p style="color: #ffffff;">Working: {{resumeInfo.workYears}} years</p>
        <p>
          <span class="icon is-large">
-          <a :href=resumeInfo.github target="_blank" title="Github"><i class="fab fa-github fa-2x"></i></a>&nbsp
-          <a :href=resumeInfo.blog target="_blank" alt="Blog"><i class="fab fa-blogger fa-2x"></i></a>
+          <a :href=resumeInfo.github target="_blank" title="Github"><i class="fab fa-github fa-1x"></i></a>&nbsp
+          <a :href=resumeInfo.blog target="_blank" alt="Blog"><i class="fab fa-blogger fa-1x"></i></a>
          </span>
        </p>
      </div>

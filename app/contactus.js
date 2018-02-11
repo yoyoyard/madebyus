@@ -56,27 +56,47 @@ Vue.component('contact-us-title', {
   `
 })
 
+Vue.component('google-map', {
+  template:
+  `
+   <div id="google-map" style="width: 480px; height: 480px;"></div>
+  `
+})
+
 const contactUs = {
   data: function () {
     return contactUsData
   },
   template:
   `
-  <div class='columns' style="padding-bottom: 30px; padding-top: 30px;">
-    <div class="column is-half">
-      <contact-us-title :contactUsTitle=contactUsTitle :contactUsSubTitle=contactUsSubTitle />
-      <div class="column">
-        <contact-us-info :contactUsInfo=contactUsInfo />
-        <contact-us-buttons />
+   <div class="container">
+    <panel-title :name=contactUsTitle />
+    <div class='columns' style="padding-bottom: 30px;">
+      <div class="column is-half">
+       <contact-form />
       </div>
-    </div>
-    <div class="column">
-     <contact-form />
+      <div class="column">
+       <google-map />
+      </div>
     </div>
    </div>
   `,
   mounted: function() {
     $('#contact-button-div').hide();
+    var map = new GMaps({
+      el: '#google-map',
+      lat: 30.519107,
+      lng: 114.366855,
+    });
+
+    map.addMarker({
+      lat: 30.519107,
+      lng: 114.366855,
+      title: 'Wuhan',
+      infoWindow: {
+        content: '<span>312 Luoyu Rd, Hongshan Qu, Wuhan Shi, Hubei Sheng, China, 430072</span>'
+      }
+    });
   }
 }
 export default contactUs
