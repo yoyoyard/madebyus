@@ -59,7 +59,7 @@ Vue.component('contact-us-title', {
 Vue.component('google-map', {
   template:
   `
-   <div id="google-map" class="shadow" style="width: 480px; height: 480px;"></div>
+   <div id="google-map" class="shadow" style="width: 500px; height: 465px; margin-top: 5px;"></div>
   `
 })
 
@@ -69,10 +69,10 @@ const contactUs = {
   },
   template:
   `
-   <div class="container">
+   <div>
     <panel-title :name=contactUsTitle />
-    <div class='columns' style="padding-bottom: 30px;">
-      <div class="column is-half">
+    <div class='columns is-gapless' style="padding-bottom: 30px;padding-top: 30px;">
+      <div class="column">
        <contact-form />
       </div>
       <div class="column">

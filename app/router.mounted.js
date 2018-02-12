@@ -1,4 +1,5 @@
 const routerFunc = function () {
+
   $('.modal-button').click(function(e) {
       $('.contact-modal').addClass('is-active');
       $("body").addClass("modal-open");
@@ -135,12 +136,8 @@ const routerFunc = function () {
         $("#navbar").css("height","60px");
         $("#brand-subtitle").hide();
 
-        //Service page
-        $(".service-item-image").css('display', 'none');
+        $('.project-top-bar').css("top","60px");
 
-        //Meetus page
-        $(".tech-stack-title-panel").css('display', 'none');
-        $("#tech-stack-list-id").addClass('white-bg');
     }else{
         $("#humburger").hide();
         $("#contact-button").show();
@@ -154,12 +151,7 @@ const routerFunc = function () {
         $("#navbar").css("height","85px");
         $("#brand-subtitle").show();
 
-        //Service page
-        $(".service-item-image").css('display', 'block');
-
-        //Meetus page
-        $(".tech-stack-title-panel").css('display', 'block');
-        $("#tech-stack-list-id").removeClass('white-bg');
+        $('.project-top-bar').css("top","85px");
 
         window.onscroll = scrollOffset;
     }

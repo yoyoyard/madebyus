@@ -60,20 +60,17 @@ body.modal-open {
 	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
 }
 
-p {
-  font-size: 20px;
-  font-weight: bold;
+#menu li {
+  float:left; /* 往左浮动 */
 }
 
-.project-nav-bar {
+.project-top-bar {
+  background-color:rgba(0,0,0,0.5);
   position:fixed;
-  left: 50px;
-  top: 200px;
+  top: 85px;
+  left: 0px;
   z-index: 1000;
-}
-
-.project-nav-bar-small-screen {
-  padding-left: 70px;
+  width: 100%;
 }
 
 /* contact us form*/

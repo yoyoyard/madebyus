@@ -2,7 +2,7 @@ const serviceData = {
   serviceTitle: "Our services",
   serviceList: [
     {
-      name: "Web Design & Development",
+      name: "Website Development",
       serviceImage: "./images/services/s1.jpg",
       serviceDesc: `
         So its essential to ensure your website design & development are simple, clean and user friendly, to make the users experience enjoyable.

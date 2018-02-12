@@ -12,7 +12,7 @@ const homeData = {
       id: 1,
       name: "project1",
       desc: "xxdsadasdas",
-      caseImage: "./images/services/s1.jpg"
+      caseImage: "./images/services/s2.jpg"
     },
     {
       id: 2,

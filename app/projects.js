@@ -5,26 +5,18 @@ Vue.component('project-item', {
   props: ['caseItem'],
   template:
   `
-  <div class="tile is-ancestor">
-    <div class="tile is-parent">
-      <div class="tile">
-        <div class="tile is-parent is-vertical">
-          <div class="tile is-child notification">
-            <span class="title">{{caseItem.name}}</span>
-            <br />
-            <span class="tag" style="margin-left: 3px;" :class=item.color v-for="item in caseItem.projectTags">
-             {{item.name}}
-            </span>
-            <br />
-            <br />
-            <span class="subtitle">{{caseItem.projectDesc}}</span>
-            <br />
-            <div class="has-text-right">
-              <a href='./cases/caseview.html'>Read More ></a>
-            </div>
-          </div>
-        </div>
-
+  <div class="columns has-text-centered">
+    <div class="column has-text-left">
+      <span class="title">{{caseItem.name}}</span>
+      <br />
+      <span class="tag" style="margin-left: 3px;" :class=item.color v-for="item in caseItem.projectTags">
+       {{item.name}}
+      </span>
+      <br />
+      <br />
+      <p>{{caseItem.projectDesc}}</p>
+      <div class="has-text-left">
+        <a href='./cases/caseview.html'>Read More ></a>
       </div>
     </div>
     <div class="tile is-vertical is-6">
@@ -35,15 +27,10 @@ Vue.component('project-item', {
 })
 
 Vue.component('project-list', {
-  props: ['caseList'],
+  props: ['navBarName', 'caseList'],
   template:
   `
    <div style="padding-bottom: 30px;">
-    <div id="st-trigger-effects" style="position: fixed; top: 10; z-index: 1000px;" >
-     <button style="background-color: #ee4f4b;" class="is-outlined has-text-white go-to-top" data-effect="st-effect-3">
-      <i class="far fa-caret-square-down fa-3x"></i>
-     </button>
-    </div>
     <article class="post__article">
       <section :id=item.id class="section" v-for="item in caseList">
         <div class="column is-gapless is-multiline is-mobile">
@@ -55,17 +42,17 @@ Vue.component('project-list', {
   `
 })
 
-Vue.component('left-nav-bar', {
+Vue.component('top-nav-bar', {
   props: ['navBarName', 'caseList'],
   template:
   `
-  <nav class="st-menu st-effect-3 scroll-nav" id="menu-3">
-    <h4>{{navBarName}}</h4>
-    <ul>
+  <nav class="scroll-nav">
+    <p style="margin-left: 15px;"><strong>{{navBarName}}</strong></p>
+    <ul id="menu">
       <li v-for="item in caseList">
-        <a :href=item.hrefLink class="project-nav-item">
+        <a :href=item.hrefLink style="margin-left: 15px;">
         {{item.name}}
-        <span style="margin: 10px; 0;" class="tag" :class=item.navTag.tagColor>{{item.navTag.tagName}}</span>
+        <span class="tag" :class=item.navTag.tagColor>{{item.navTag.tagName}}</span>
         </a>
       </li>
     </ul>
@@ -77,15 +64,11 @@ Vue.component('project-content', {
   props: ['navBarName', 'caseList'],
   template:
   `
-    <div id="st-container" class="st-container">
-    	<div class="st-pusher">
-    		<left-nav-bar :navBarName=navBarName :caseList=caseList />
-    		<div class="st-content">
-    			<div class="st-content-inner">
-    				 <project-list :caseList=caseList />
-    			</div>
-    		</div>
-    	</div>
+    <div class="column">
+     <div class="project-top-bar">
+      <top-nav-bar :navBarName=navBarName :caseList=caseList />
+     </div>
+    	<project-list :navBarName=navBarName :caseList=caseList />
     </div>
   `
 })

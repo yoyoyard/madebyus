@@ -1,3 +1,4 @@
+import detectMobilePlatform from './shared/detect-platform.js'
 const meetUsFunc = function () {
 
   $('#contact-button-div').show();
@@ -11,6 +12,16 @@ const meetUsFunc = function () {
       $('.cv-modal').removeClass('is-active');
       $("body").removeClass("modal-open");
   });
+
+  if (detectMobilePlatform()){
+    //Meetus page
+    $(".tech-stack-title-panel").hide();
+    $("#tech-stack-list-id").addClass('white-bg');
+  } else {
+    //Meetus page
+    $(".tech-stack-title-panel").show();
+    $("#tech-stack-list-id").removeClass('white-bg');
+  }
 
   //Creating 50 thumbnails inside .image_wall_grid
   //the images are stored on the server serially. So we can use a loop to generate the HTML.

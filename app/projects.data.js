@@ -26,7 +26,7 @@ const projectsData = {
     {
       id: "scrollNav-2",
       hrefLink: "#scrollNav-2",
-      name: "McGraw-Hill Education",
+      name: "McGraw",
       navTag: {
         tagName: "Desktop",
         tagColor: "is-danger",

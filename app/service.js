@@ -1,4 +1,5 @@
 import serviceData from './service.data.js';
+import detectMobilePlatform from './shared/detect-platform.js'
 
 Vue.component('service-item', {
   props: ['name', 'desc', 'serviceImage'],
@@ -16,57 +17,34 @@ Vue.component('service-item', {
   `
 })
 
-Vue.component('service-item-reverse', {
-  props: ['name', 'desc', 'serviceImage'],
-  template:
-  `
-  <div class="columns">
-   <div class="column service-item-image">
-    <img :src=serviceImage class="shadow"/>
-   </div>
-   <div class="column">
-     <h5 class="title">{{name}}</h5>
-     <span>{{desc}}</span>
-   </div>
-  </div>
-  `
-})
-
 const service = {
   data: function () {
     return serviceData
   },
   template:
   `
-  <div class='column' style="padding-bottom: 30px;">
+  <div>
     <panel-title :name=serviceTitle />
-    <div class="container">
-     <service-item
-       :name=serviceList[0].name
-       :serviceImage=serviceList[0].serviceImage
-       :desc=serviceList[0].serviceDesc
+    <div style="padding: 30px;">
+     <service-item v-for="item in serviceList"
+       :key=item.name
+       :name=item.name
+       :serviceImage=item.serviceImage
+       :desc=item.serviceDesc
      />
-    </div>
-    <service-item-reverse
-      :name=serviceList[1].name
-      :serviceImage=serviceList[1].serviceImage
-      :desc=serviceList[1].serviceDesc
-    />
-    <service-item
-      :name=serviceList[2].name
-      :serviceImage=serviceList[2].serviceImage
-      :desc=serviceList[2].serviceDesc
-    />
-    <service-item-reverse
-      :name=serviceList[3].name
-      :serviceImage=serviceList[3].serviceImage
-      :desc=serviceList[3].serviceDesc
-    />
    </div>
   </div>
   `,
   mounted: function() {
     $('#contact-button-div').show();
+
+    if (detectMobilePlatform()){
+      //Service page
+      $(".service-item-image").hide();
+    } else {
+      //Service page
+      $(".service-item-image").show();
+    }
   }
 }
 export default service

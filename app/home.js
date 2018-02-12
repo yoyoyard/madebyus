@@ -48,17 +48,13 @@ Vue.component('recent-case-card', {
   props: ['name', 'desc', 'caseImage'],
   template:
   `
-  <div class="card">
-   <div class="card-image">
-     <div class="hovereffect">
-      <img class="img-responsive" :src=caseImage alt="" style="width: 400px; height: 250px;" />
+     <div class="hovereffect" style="padding: 10px;">
+      <img class="img-responsive" :src=caseImage alt="" />
       <div class="overlay">
        <h2>{{name}}</h2>
        <a class="info" href="/#/projects">Read more</a>
       </div>
      </div>
-   </div>
- </div>
  `
 })
 
@@ -66,9 +62,9 @@ Vue.component('recent-case-list', {
   props: ['recentCaseTitle', 'recentCaseList', 'recentCaseButtonText'],
   template:
   `
-  <div class="container">
+  <div >
     <panel-title :name=recentCaseTitle />
-    <div class="columns is-mobile is-centered ">
+    <div class="columns is-centered ">
      <div class="column is-4" v-for="item in recentCaseList">
       <recent-case-card :name=item.name :desc=item.desc :caseImage=item.caseImage />
      </div>
