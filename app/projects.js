@@ -47,10 +47,10 @@ Vue.component('top-nav-bar', {
   template:
   `
   <nav class="scroll-nav">
-    <p style="margin-left: 15px;"><strong>{{navBarName}}</strong></p>
+    <p style="margin-left: 15px;"><strong style="color: #ffffff;">{{navBarName}}</strong></p>
     <ul id="menu">
       <li v-for="item in caseList">
-        <a :href=item.hrefLink style="margin-left: 15px;">
+        <a :href=item.hrefLink style="margin-left: 15px; color: #ffffff;">
         {{item.name}}
         <span class="tag" :class=item.navTag.tagColor>{{item.navTag.tagName}}</span>
         </a>
