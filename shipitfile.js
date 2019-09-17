@@ -16,7 +16,7 @@ module.exports = shipit => {
 
   shipit.task('start', function() {
     // ...
-    shipit.emit('webpack')
+    shipit.emit('webpack webpack.prod.js')
   })
-  
+
 }
