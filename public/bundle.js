@@ -3552,10 +3552,7 @@ const merge = __webpack_require__(90);
 const common = __webpack_require__(186);
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
-  }
+  devtool: 'inline-source-map'
 });
 
 /***/ }),
@@ -7271,6 +7268,7 @@ exports.default = mergeUnique;
     loaders: [{ test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ }]
   },
   devServer: {
+    contentBase: "./public",
     historyApiFallback: true,
     inline: true
   }

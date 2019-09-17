@@ -1,7 +1,7 @@
 # madebyus
 
 # Build
-  `npm install & npm start`
+  `npm install & npm start -- --watch`
 
 # Run
   `npm run server`
